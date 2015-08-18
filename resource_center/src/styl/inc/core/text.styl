@@ -1,0 +1,160 @@
+@require 'colors'
+@require 'config'
+
+a
+	text-decoration none
+
+h1,h2,h3,h4,h5,h6,p
+	transition font-size TRANSITION_DURATION TRANSITION_EASE
+
+sup,sub
+	position       relative
+	vertical-align baseline
+
+sup
+	top -.4em
+	font-size 10px
+
+sub
+	top .4em
+
+.textCaps
+	text-transform uppercase
+
+.textUnderline
+	text-decoration underline
+
+.textCentered
+	text-align center
+
+.textRight
+	text-align right
+
+.textBold
+	font-weight bold
+
+.textOblique
+	font-style oblique
+
+.textDefault
+	font-family Helvetica,Arial,sans-serif
+
+.textArial
+	font-family Arial
+
+.textArialBold
+	@extend .textArial
+	font-weight bold
+
+.textTimes
+	font-family Times
+
+.textBentonSans
+	font-family 'BentonSans'
+
+.textBentonSansBd
+	font-family 'BentonSans-Bd'
+
+.textBentonSansBk
+	font-family 'BentonSans-Bk'
+
+.textBentonSansLt
+	font-family 'BentonSans-Lt'
+
+.textBentonSansMd
+	font-family 'BentonSans-Md'
+
+body
+	@extend .textArial
+	line-height 1.4
+
+.textByzantium
+	color COLOR_BYZANTIUM
+
+.textNavy
+	color COLOR_NAVY
+
+.textGrey
+	color COLOR_MAIN_GREY
+
+.textWhite
+	color COLOR_WHITE
+
+.text-5Em
+	emSize .5
+
+.text-6Em
+	emSize .6
+
+.text-7Em
+	emSize .7
+
+.text-8Em
+	emSize .8
+
+.text-9Em
+	emSize .9
+
+.text1Em
+	emSize 1
+
+.text1-1Em
+	emSize 1.1
+
+.text1-2Em
+	emSize 1.2
+
+.text1-3Em
+	emSize 1.3
+
+.text1-4Em
+	emSize 1.4
+
+.text1-5Em
+	emSize 1.5
+
+.text1-6Em
+	emSize 1.6
+
+.text1-7Em
+	emSize 1.7
+
+.text1-8Em
+	emSize 1.8
+
+.text1-9Em
+	emSize 1.9
+
+.text2Em
+	emSize 2
+
+.text2-1Em
+	emSize 2.1
+
+.text2-2Em
+	emSize 2.2
+
+.text2-3Em
+	emSize 2.3
+
+.text2-4Em
+	emSize 2.4
+
+.text2-5Em
+	emSize 2.5
+
+.text2-6Em
+	emSize 2.6
+
+.text2-7Em
+	emSize 2.7
+
+.text2-8Em
+	emSize 2.8
+
+.text2-9Em
+	emSize 2.9
+
+.text3Em
+	emSize 3
+

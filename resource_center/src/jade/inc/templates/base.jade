@@ -1,0 +1,46 @@
+//- template from which all pages extend
+include ../config
+include ../mixins/core
+doctype strict
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport',content='width=device-width, initial-scale=1')
+		block title
+			title!= PROJECT_NAME
+		block css
+			+loadCss(_config.css.path + '/shared.css')
+
+	// ===============
+	// = iNav HEADER =
+	// ===============
+	include ../../../vendor/inav/responsive_head.html
+	include ../../../vendor/inav/header.html
+
+	// =================
+	// = BOOMBOX BEGIN =
+	// =================
+	#shell
+		+navBar
+			block nav
+		block content
+
+	#aux
+		block aux
+
+	if DEV_MODE
+		block devJs
+			script(src='#{_config.js.path}/#{JQUERY}',type='text/javascript')
+			script(src='#{_config.js.path}/#{JQUERY_UI}',type='text/javascript')
+	else
+		block prodJs
+
+	// ===============
+	// = BOOMBOX END =
+	// ===============
+
+	// ===============
+	// = iNav FOOTER =
+	// ===============
+	include ../../../vendor/inav/footer.html
+	include ../../../vendor/inav/responsive_foot.html

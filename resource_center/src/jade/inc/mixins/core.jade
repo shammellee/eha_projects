@@ -1,0 +1,40 @@
+mixin loadCss(href)
+	link(href!=href,rel='stylesheet',type='text/css')&attributes(attributes)
+
+mixin navBar
+	#nav.bg_nav_bar
+		span.navLabel!= PROJECT_NAME
+		if block
+			block
+
+mixin bareTable
+	table(border='0',cellpadding='0',cellspacing='0')&attributes(attributes)
+		if block
+			block
+
+mixin panelWithShadow
+	+bareTable(class='shadowTable')
+		tr
+			td
+				+bareTable(class='panelShadowGroupA')
+					tr: td.panel_shadow_section_a
+					tr: td.panel_shadow_section_b
+					tr: td.panel_shadow_section_c
+			td&attributes(attributes)
+				if block
+					block
+			td
+				+bareTable(class='panelShadowGroupB')
+					tr: td.panel_shadow_section_k
+					tr: td.panel_shadow_section_j
+					tr: td.panel_shadow_section_i
+		tr
+			td.panel_shadow_section_d
+			td
+				+bareTable(class='panelShadowGroupC')
+					tr
+						td.panel_shadow_section_e
+						td.panel_shadow_section_f
+						td.panel_shadow_section_g
+			td.panel_shadow_section_h
+	

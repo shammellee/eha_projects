@@ -1,0 +1,303 @@
+include inc/config
+include inc/mixins/index
+extends inc/modules/email_boilerplate
+
+block bodyContent
+	+table('100%')
+		// UPPER SECTION
+		tr(bgcolor=_config.colors.bgMain)
+			td(align='center',style='font-family:#{_config.type.coreFamily};font-size:#{_config.type.coreSize};')
+
+				+table(CONTENT_WIDTH_FULL)(class='mobile')
+					tr: +td_vSpace(30)
+					// SNIPPET
+					tr: td(style='padding-bottom:8px;')
+
+						+table: tr
+								td.mobile-width-75-percent(align='left',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.snippetSize};')
+									+mkt()(id='snippet')
+										!= text.snippet
+								td(align='right',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.snippetSize};')
+									+mkt()(id='findACard')
+										| #{_config.text.findACard.pre}
+										a(href=_config.urls.findACard,style='color:#{_config.colors.link};text-decoration:underline;')!= _config.text.findACard.text
+										| #{_config.text.findACard.post}
+
+					// HEADER
+					tr: td.mobile(width=CONTENT_WIDTH_FULL,style='background:url(#{_config.images.path + "/" + images.prefix + _config.images.fullHeader.src}) no-repeat !important;background-size:100% !important;')
+
+						+table
+							tr
+								td(valign='top',width=_config.images.header[0].width)
+									+mkt()(id='headerImgWest')
+										a(href=_config.urls.open,style='text-decoration:none;')
+											+img(_config.images.path + '/' + images.prefix + _config.images.header[0].src,_config.images.header[0].width,_config.images.header[0].height)(class='mobile')
+								td(valign='top',width=_config.images.header[1].width)
+									+mkt()(id='headerImgEast')
+										+img(_config.images.path + '/' + images.prefix + _config.images.header[1].src,_config.images.header[1].width,_config.images.header[1].height)(class='mobile')
+
+						+table
+							tr
+								td(valign='top',width=_config.images.header[2].width)
+									+mkt()(id='headerImgSouth')
+										+img(_config.images.path + '/' + images.prefix + _config.images.header[2].src,_config.images.header[2].width,_config.images.header[2].height)(class='mobile')
+
+					// HEADER TEXT
+					tr(bgcolor=_config.colors.accent): td.mobile(width=CONTENT_WIDTH_FULL)
+
+						+table
+							tr: +td_vSpace(20)
+							tr: td.mobile(width=CONTENT_WIDTH_FULL)
+
+								+table
+									tr
+										+td_hSpace(CONTENT_PADDING)
+
+										td.block.mobile.mobile-font-size-1-5-em.mobile-line-height-1-2(align='left',valign='top',width=418,style='color:#{_config.colors.headerText};font-family:#{_config.type.coreFamily};font-size:#{_config.type.headerSize};font-weight:bold;line-height:#{_config.type.headerLineHeight}')
+											+mkt(_config.type.headerLineHeight)(id='headerText')
+												if text.header instanceof Array
+													each _line in text.header
+														!= _line
+														br.mobile-hide
+												else if text.header instanceof Object
+													- var _length = Object.keys(text.header).length
+													- var _n = 1
+													while _n <= _length
+														!= text.header['line' + _n]
+														br.mobile-hide
+														- _n++
+												else
+													!= text.header
+										td.block.mobile-padding-top-15(valign='middle',width=132)
+											+mkt()(id='headerCTA')
+												a(href=urls.article,style='text-decoration:none;')
+													+img(_config.images.path + '/' + images.prefix + _config.images.cta1.src,_config.images.cta1.width,_config.images.cta1.height,_config.text.articleLink)
+
+										+td_hSpace(CONTENT_PADDING)
+							tr: +td_vSpace(15)
+
+					// CONTENT SECTION 1
+					tr(bgcolor=_config.colors.bgContent): td.mobile(width=CONTENT_WIDTH_FULL)
+
+						+table
+							tr
+								+td_vSpace(CONTENT_PADDING)
+								+td_vSpace(CONTENT_PADDING)
+							tr
+								+td_hSpace(CONTENT_PADDING)
+								td.mobile(width=CONTENT_WIDTH_FULL - CONTENT_PADDING)
+
+									// CONFIG FOR LAYOUT
+									case layout
+										when 'quickTip'
+											- var cell1Width = _config.sizes.quickTipSection1Width
+											- var cell2Width = CONTENT_WIDTH_FULL - cell1Width - CONTENT_PADDING * 3
+										when 'quote'
+											- var cell1Width = CONTENT_WIDTH_FULL - images.quote.width - CONTENT_PADDING * 3
+											- var cell2Width = images.quote.width
+										when 'full'
+										default
+											- var cell1Width = CONTENT_WIDTH_FULL - CONTENT_PADDING * 2
+											- var cell2Width = null
+
+									+table
+										tr
+											// SECTION 1, SIDE A
+											td.block.mobile(align='left',valign='top',width=cell1Width + CONTENT_PADDING)
+
+												+table
+													tr
+														td.block.mobile(width=cell1Width)
+
+															+table
+																tr: td(align='left',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.coreSize};line-height:#{_config.type.section1LineHeight};')
+																	+mkt(_config.type.section1LineHeight)(id='section1Paragraph1')
+																		!= text.paragraph1
+																tr: +td_vSpace(15)
+																tr: td(align='left',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.coreSize};line-height:#{_config.type.section1LineHeight};')
+																	+mkt(_config.type.section1LineHeight)(id='section1Paragraph2')
+																		!= text.paragraph2
+																tr: +td_vSpace(20)
+																tr: td(align='left',valign='top')
+																	+mkt()(id='section1CTA')
+																		a(href=urls.article,style='text-decoration:none;')
+																			+img(_config.images.path + '/' + images.prefix + _config.images.cta2.src,_config.images.cta2.width,_config.images.cta2.height,_config.text.articleLink)(class='mobile-margin-auto')
+																tr: td
+														td.mobile-width-25(width=CONTENT_PADDING)
+											if cell2Width
+												// SECTION 1, SIDE B
+												td.block.mobile.mobile-padding-top-25(align='left',valign='top',width=cell2Width + CONTENT_PADDING)
+
+													+table
+														tr
+															td.mobile-width-auto(width=cell2Width)
+																case layout
+																	when 'quote'
+																		// QUOTE
+																		+table
+																			tr
+																				td(width=images.quote.width)
+																					+mkt()(id='quoteImg')
+																						+img(_config.images.path + '/' + images.prefix + images.quote.src,images.quote.width,images.quote.height)(class='mobile-margin-auto')
+																			tr
+																	when 'quickTip'
+																		// QUICK TIP
+																		+table
+																			tr
+																				td
+
+																					+table
+																						tr(bgcolor=_config.colors.accent)
+																							td(width=_config.sizes.quickTipPadding)
+																							td(align='left',valign='middle',style='color:#{_config.colors.quickTipLabel};font-family:#{_config.type.coreFamily};font-size:#{_config.type.quickTipTitleSize};font-weight:bold;')
+																								+mkt()(id='quickTipLabel')
+																									!= _config.text.quickTipLabel
+																							td(align='top',valign='top',width=_config.images.quickTip.width)
+																								+mkt()(id='quickTipIcon')
+																									+img(_config.images.path + '/' + images.prefix + _config.images.quickTip.src,_config.images.quickTip.width,_config.images.quickTip.height)
+																			tr(bgcolor=_config.colors.bgQuickTip)
+																				td
+
+																					+table
+																						tr
+																							+td_space(_config.sizes.quickTipPadding)
+																							+td_vSpace(_config.sizes.quickTipPadding)
+																							+td_space(_config.sizes.quickTipPadding)
+																						tr
+																							+td_hSpace(_config.sizes.quickTipPadding)
+																							td(style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.quickTipBodySize};line-height:#{_config.type.quickTipBodyLineHeight};')
+																								+mkt(_config.type.quickTipBodyLineHeight)(id='quickTipBody')
+																									!= text.quickTip + BLANK
+																									a(href=urls.article,style='color:#{_config.colors.link};font-weight:bold;text-decoration:none;') &gt;
+																							+td_hSpace(_config.sizes.quickTipPadding)
+																						tr
+																							+td_space(_config.sizes.quickTipPadding)
+																							+td_vSpace(_config.sizes.quickTipPadding)
+																							+td_space(_config.sizes.quickTipPadding)
+															td.mobile-width-25(width=CONTENT_PADDING)
+							tr
+								+td_vSpace(CONTENT_PADDING)
+								td.mobile-padding-right-25(align='left',valign='bottom')
+									table.mobile(width=CONTENT_WIDTH_FULL - CONTENT_PADDING * 2,style='border-bottom:#{_config.sizes.section1BorderBottomWidth}px solid #{_config.colors.accent};')
+										tr: td!= BLANK
+
+					// CONTENT SECTION 2
+					tr(bgcolor=_config.colors.bgContent): td
+
+						+table(style='border-bottom:#{_config.sizes.upperSectionBorderBottomWidth}px solid #{_config.colors.accent}')
+							tr
+								+td_vSpace(18)
+								+td_vSpace(18)
+								+td_vSpace(18)
+							tr
+								+td_hSpace(CONTENT_PADDING)
+								td(align='left',valign='top',width=CONTENT_WIDTH_FULL - CONTENT_PADDING * 2)
+
+									+table
+										tr
+											td(style='color:#{_config.colors.accent};font-family:Arial,Helvetica,sans-serif;font-size:#{_config.type.getACardTitleSize};font-weight:bold;')
+												+mkt()(id='getACardTitle')
+													!= _config.text.getACardTitle
+										tr: +td_vSpace(8)
+										tr
+											td(style='color:#{_config.colors.textMain};font-family:Arial,Helvetica,sans-serif;font-size:#{_config.type.getACardBodySize};line-height:#{_config.type.getACardBodyLineHeight};margin:0;padding:0;')
+												+mkt(_config.type.getACardBodyLineHeight)(id='getACardBody')
+													!= _config.text.getACardBody + BLANK
+													a(href=_config.urls.findACard,style='color:#{_config.colors.link};text-decoration:underline;')!= _config.text.getACardLink
+								+td_hSpace(CONTENT_PADDING)
+							tr
+								+td_vSpace(15)
+								+td_vSpace(15)
+								+td_vSpace(15)
+
+					// SOCIAL MEDIA SECTION
+					tr(bgcolor=_config.colors.bgMain)
+						td(align='left',valign='top')
+
+							+table_vSpace(10,4)
+
+							+table()(class='mobile-width-auto mobile-margin-auto')
+								td(align='right',valign='middle',style='color:#{_config.colors.accent};font-size:#{_config.type.socialMediaLabelSize};font-weight:bold;text-transform:uppercase;')
+									+mkt()(id='socialMediaLabel')
+										!= _config.text.socialMedia
+								td(width=_config.images.facebook.width,style='padding-left:#{_config.sizes.socialMediaIconsPaddingLeft}px;')
+									+mkt()(id='facebookIcon')
+										a(href=_config.urls.facebook,style='text-decoration:none')
+											+img(_config.images.path + '/' + images.prefix + _config.images.facebook.src,_config.images.facebook.width,_config.images.facebook.height,_config.images.facebook.alt)
+								td(width=_config.images.twitter.width,style='padding-left:#{_config.sizes.socialMediaIconsPaddingLeft}px;')
+									+mkt()(id='twitterIcon')
+										a(href=_config.urls.twitter,style='text-decoration:none')
+											+img(_config.images.path + '/' + images.prefix + _config.images.twitter.src,_config.images.twitter.width,_config.images.twitter.height,_config.images.twitter.alt)
+								td(width=_config.images.linkedin.width,style='padding-left:#{_config.sizes.socialMediaIconsPaddingLeft}px;')
+									+mkt()(id='linkedInIcon')
+										a(href=_config.urls.linkedin,style='text-decoration:none')
+											+img(_config.images.path + '/' + images.prefix + _config.images.linkedin.src,_config.images.linkedin.width,_config.images.linkedin.height,_config.images.linkedin.alt)
+
+							+table_vSpace(10,4)
+
+		// LOWER SECTION
+		tr(bgcolor=_config.colors.bgFooter)
+			td(align='center',style='font-family:Arial,Helvetica,sans-serif;')
+				+table(600)(class='mobile')
+					tr
+						+td_vSpace(18,3)
+					tr
+						+td_hSpace(CONTENT_PADDING)
+						td(align='left',valign='top',width=CONTENT_WIDTH_FULL - CONTENT_PADDING * 2)
+							+table
+								tr
+									td.block.mobile.mobile-text-align-center.mobile-padding-bottom-10(align='left',valign='top',width='25%',style='font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerLinksSize};')
+										+mkt()(id='customerService')
+											a(href=_config.urls.customerService,style='color:#{_config.colors.link};text-decoration:none;')!= _config.text.customerService
+									td.block.mobile.mobile-text-align-center.mobile-border-none.mobile-padding-bottom-10(align='center',valign='top',width='30%',style='border-left:#{_config.sizes.footerLinksBorderLeftWidth}px solid #{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerLinksSize};')
+										+mkt()(id='privacyStatement')
+											a(href=_config.urls.privacyStatement,style='color:#{_config.colors.link};text-decoration:none;')!= _config.text.privacyStatement
+									td.block.mobile.mobile-text-align-center.mobile-border-none.mobile-padding-bottom-10(align='center',valign='top',width='32%',style='border-left:#{_config.sizes.footerLinksBorderLeftWidth}px solid #{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerLinksSize};')
+										+mkt()(id='addressBook')
+											a(href=_config.urls.addressBook,style='color:#{_config.colors.link};text-decoration:none;')!= _config.text.addressBook
+									td.block.mobile.mobile-text-align-center.mobile-border-none(align='right',valign='top',width='13%',style='border-left:#{_config.sizes.footerLinksBorderLeftWidth}px solid #{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerLinksSize};')
+										+mkt()(id='unsubscribe')
+											a(href=_config.urls.unsubscribe,style='color:#{_config.colors.link};text-decoration:none;')!= _config.text.unsubscribe
+						+td_hSpace(CONTENT_PADDING)
+					tr
+						+td_vSpace(15,3)
+					tr
+						+td_hSpace(CONTENT_PADDING)
+						td(align='left',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerBodySize};letter-spacing:#{_config.type.footerBodyLetterSpacing};line-height:#{_config.type.footerBodyLineHeight};')
+							+mkt(_config.type.footerBodyLineHeight)(id='footerParagraph1')
+								!= _config.text.footerParagraph1Part1 + BLANK
+								a(href=_config.urls.phishing,style='color:#{_config.colors.link};text-decoration:underline;')!= _config.text.footerParagraph1Part2
+								!= _config.text.footerParagraph1Part3 + BLANK
+								a(href=_config.urls.customerService,style='color:#{_config.colors.link};text-decoration:underline;')!= _config.text.footerParagraph1Part4
+								!= _config.text.footerParagraph1Part5
+						+td_hSpace(CONTENT_PADDING)
+					tr
+						+td_vSpace(12,3)
+					tr
+						+td_hSpace(CONTENT_PADDING)
+						td(align='left',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerBodySize};letter-spacing:#{_config.type.footerBodyLetterSpacing};line-height:#{_config.type.footerBodyLineHeight};')
+							+mkt(_config.type.footerBodyLineHeight)(id='footerParagraph2')
+								!= _config.text.footerParagraph2
+						+td_hSpace(CONTENT_PADDING)
+					tr
+						+td_vSpace(12,3)
+					tr
+						+td_hSpace(CONTENT_PADDING)
+						td(align='left',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerBodySize};letter-spacing:#{_config.type.footerBodyLetterSpacing};line-height:#{_config.type.footerBodyLineHeight};')
+							+mkt(_config.type.footerBodyLineHeight)(id='footerParagraph3')
+								!= _config.text.footerParagraph3Line1
+								br
+								!= _config.text.footerParagraph3Line2
+						+td_hSpace(CONTENT_PADDING)
+					tr
+						+td_vSpace(12,3)
+					tr
+						+td_hSpace(CONTENT_PADDING)
+						td(align='left',valign='top',style='color:#{_config.colors.textMain};font-family:#{_config.type.coreFamily};font-size:#{_config.type.footerBodySize};letter-spacing:#{_config.type.footerBodyLetterSpacing};line-height:#{_config.type.footerBodyLineHeight};')
+							+mkt(_config.type.footerBodyLineHeight)(id='footerParagraph4')
+								!= _config.text.footerParagraph4
+						+td_hSpace(CONTENT_PADDING)
+					tr
+						+td_vSpace(CONTENT_PADDING,3)
+
+

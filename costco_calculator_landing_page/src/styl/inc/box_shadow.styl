@@ -1,0 +1,78 @@
+@require 'core/config'
+
+setBgImg()
+	background-color COLOR_NONE
+	background-image    url(IMG_DIR + '/box_shadow/' + substr(selector(),1)  + '.png')
+	background-position 0 0
+	background-repeat   no-repeat
+
+dimensions(d)
+	height arguments[1]
+	width arguments[0]
+
+.boxShadow
+	min-height 1px
+	.fluidTable
+		height 100%
+		width  100%
+
+.shadowGroupNorth
+.shadowGroupSouth
+	width 100%
+
+.shadowGroupWest
+.shadowGroupEast
+	height 100%
+
+.box_shadow_a
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_b
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_c
+	setBgImg()
+	background-repeat repeat-x
+	dimensions auto 6px
+.box_shadow_d
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_e
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_f
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_g
+	setBgImg()
+	background-repeat repeat-y
+	dimensions 6px 100%
+.box_shadow_h
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_i
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_j
+	setBgImg()
+	background-repeat repeat-y
+	dimensions 6px 100%
+.box_shadow_k
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_l
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_m
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_n
+	setBgImg()
+	background-repeat repeat-x
+	dimensions auto 6px
+.box_shadow_o
+	setBgImg()
+	dimensions 6px 6px
+.box_shadow_p
+	setBgImg()
+	dimensions 6px 6px

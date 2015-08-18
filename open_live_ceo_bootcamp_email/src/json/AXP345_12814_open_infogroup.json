@@ -1,0 +1,83 @@
+{
+	"id":"infogroup"
+	,"provider":"infogroup"
+	,"styles":
+	{
+	}
+	,"text":
+	{
+		"preview":""
+		,"section1":
+		{
+			"paragraph1":"Free networking, fresh ideas, and stellar speakers.<br />Designed for the toughest business owners on earth."
+			,"paragraph2BoldText":"OPEN FORUM: CEO BOOTCAMP"
+			,"paragraph2":"is a free program designed to help women entrepreneurs grow their businesses and reach their full potential as CEOs."
+			,"paragraph3":"Join our friends at American Express OPEN in Chicago this September to learn from industry visionaries, get exclusive access to business-building tools, and expand your network of fellow women business owners."
+		}
+		,"section2":
+		{
+			"row1":
+			{
+				"column1":"Free<br />Event"
+				,"column2":
+				{
+					"date":"Tuesday, September 30th, 2014"
+					,"time":"8:30 AM &ndash; 6:30 PM"
+					,"location":"Fairmont Chicago"
+					,"venue":"Millennium Park"
+					,"address":"200 N. Columbus Drive"
+					,"city":"Chicago"
+					,"state":"IL"
+					,"zip":"60601"
+				}
+			}
+			,"row2":
+			{
+				"column1":"What to<br />Expect"
+				,"column2":
+				{
+					"line1":"Inspirational keynotes from industry experts"
+					,"line2":"Hands-on learning and development workshops"
+					,"line3":"Connections with hundreds of female entrepreneurs"
+					,"line4":"Topics curated for women, by women"
+				}
+			}
+		}
+		,"section3":
+		{
+			"line1":"Can't come to Chicago? Register below to watch the live stream."
+			,"line2":"For more information on the program,"
+			,"line3":"visit"
+		}
+		,"section4":
+		{
+			"field1":"Questions?"
+			,"field2":"Email:"
+		}
+		,"section5":"American Express OPEN is dedicated to helping small business do more business. We are proud to serve the toughest businesspeople on earth."
+	}
+	,"images":
+	{
+		"path":"images"
+		,"header":"header.png"
+		,"separator1":"vertical_separator_1.png"
+		,"separator2":"vertical_separator_2.png"
+		,"register":"register_btn.png"
+		,"logo":"amex_open_logo.png"
+	}
+	,"urls":
+	{
+		"header":"#"
+		,"ceoBootCamp":"www.openforum.com/ceobootcamp"
+		,"ceoBootCampEmail":"ceobootcamp@aexp.com"
+		,"open":"#"
+		,"privacyStatement":"#"
+		,"addressBook":"#"
+		,"customerService":"#"
+		,"unsubscribe":"#"
+		,"facebook":"#"
+		,"twitter":"#"
+		,"linkedIn":"#"
+		,"phishing":"#"
+	}
+}

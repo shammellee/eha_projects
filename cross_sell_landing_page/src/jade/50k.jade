@@ -1,0 +1,11 @@
+extends inc/index
+
+block variables
+	- sections        = [{id:'businessRewards',label:'Business Rewards'},{id:'benefitsAndTools',label:'Benefits and Tools'}];
+	- tokens          = {}
+	- tokens.mrPoints = '50,000'
+	- tokens.phone    = '1-866-454-3822'
+	- tokens.rsvp     = '@Model.Rsvp'
+	- tokens.zip      = '@Model.Zipcode'
+	- tokens.bonusID  = 'Bonus ID A5V7'
+	- applyNowURL     = 'https://www262.americanexpress.com/business-card-application/rsvp/business-gold-charge-card/cmpreapprovedrsvp/' + tokens.rsvp + '-' + tokens.zip

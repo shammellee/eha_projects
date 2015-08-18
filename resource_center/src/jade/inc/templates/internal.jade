@@ -1,0 +1,40 @@
+//- tempate for internal pages
+extends base
+
+append css
+	+loadCss(_config.css.path + '/shared_internal.css')
+
+append nav
+	include ../modules/nav
+block content
+	// ========
+	// = HERO =
+	// ========
+	block hero
+
+	#contentShell.clearfix
+		// ================
+		// = CONTENT LIST =
+		// ================
+		block list
+
+		block modules
+			include ../partials/modules
+
+		block footnotes
+
+block aux
+	.overlay!= BLANK
+	#agreementShell
+		+panelWithShadow(id='agreement')
+			include ../partials/agreement
+	#youtubeVideoPlayerShell
+		span.closeVideo Close [x]
+		+panelWithShadow(id='videoPlayer')
+			iframe#youtubeVideoPlayer(allowfullscreen,height=VIDEO_PLAYER_HEIGHT,frameborder='0',type='text/html',width=VIDEO_PLAYER_WIDTH)
+
+append devJs
+	script(src='#{_config.js.path}/internal.js',type='text/javascript')
+
+append prodJs
+	script(src='#{_config.js.path}/internal.min.js',type='text/javascript')

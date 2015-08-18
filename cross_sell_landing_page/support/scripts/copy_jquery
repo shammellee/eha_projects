@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+srcDir='src/vendor/jquery'
+buildDir='build/js'
+
+if [[ $1 != '' ]]
+then
+	jqueryFile="${srcDir}/jquery-${1}.js"
+
+	if [[ -f "$jqueryFile" ]]
+	then
+		cp "$jqueryFile" "$buildDir"
+	else
+		echo -e "\033[31m${jqueryFile} doesn't exist\033[0m"
+	fi
+else
+	echo -e "\033[31mjQuery version not specified specified\033[0m"
+fi
+
+if [[ $2 != '' ]]
+then
+	jqueryUIFile="${srcDir}/jquery-ui-${2}.js"
+
+	if [[ -f "$jqueryUIFile" ]]
+	then
+		cp "$jqueryUIFile" "$buildDir"
+	else
+		echo -e "\033[31m${jqueryUIFile} doesn't exist\033[0m"
+	fi
+else
+	echo -e "\033[31mjQuery UI version not specified specified\033[0m"
+fi
+

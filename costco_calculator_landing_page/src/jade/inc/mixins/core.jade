@@ -1,0 +1,57 @@
+mixin loadCSS(url)
+	link(href!=url + (/\.css$/gi.test(url) ? '' : '.css'),rel='stylesheet',type='text/css')&attributes(attributes)
+
+mixin loadJS(url)
+	script(src!=url + (/\.js$/gi.test(url) ? '' : '.js'),type='text/javascript')&attributes(attributes)
+
+mixin container
+	.container&attributes(attributes)
+		if block
+			block
+
+mixin content
+	.content&attributes(attributes)
+		if block
+			block
+
+mixin bareTable
+	table(border='0',cellpadding='0',cellspacing='0')&attributes(attributes)
+		if block
+			block
+
+mixin boxShadow
+	.boxShadow&attributes(attributes)
+		+bareTable.fluidTable
+			tr
+				td.box_shadow_a
+				td
+					+bareTable.shadowGroupNorth: tr
+						td.box_shadow_b
+						td.box_shadow_c
+						td.box_shadow_d
+				td.box_shadow_e
+			tr
+				td
+					+bareTable.shadowGroupWest
+						tr: td.box_shadow_f
+						tr: td.box_shadow_g
+						tr: td.box_shadow_h
+				td.boxShadowContent
+					if block
+						block
+				td
+					+bareTable.shadowGroupEast
+						tr: td.box_shadow_i
+						tr: td.box_shadow_j
+						tr: td.box_shadow_k
+			tr
+				td.box_shadow_l
+				td
+					+bareTable.shadowGroupSouth: tr
+						td.box_shadow_m
+						td.box_shadow_n
+						td.box_shadow_o
+				td.box_shadow_p
+
+mixin vSpace(height)
+	.spacer(style='height:' + (typeof height === 'string' ? height : height + 'px') + ';')

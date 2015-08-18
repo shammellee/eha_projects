@@ -1,0 +1,289 @@
+{
+	"dev":
+	{
+		"nav":
+		{
+			"topLevelItem":{"label":"Marketing Resources","url":"#"}
+			,"dropdown":
+			[
+				{"label":"Signings and Sales Support","url":"#"}
+				,{"label":"Customer Engagement and Activation","url":"#"}
+				,{"label":"Customer Growth and Retention","url":"#"}
+				,{"label":"Shop Small<sup>&reg;</sup> and Small Business Saturday<sup>&reg;</sup>","url":"#"}
+				,{"label":"See More Resources","url":"#"}
+			]
+			,"knowledgeCenter":{"label":"Knowledge Center","url":"http://knowledgecenter.americanexpress.com"}
+		}
+		,"login":
+		{
+			"title":"Welcome to the American Express Resource Center"
+			,"body":"On this site, you can access valuable information and resources designed to help you acquire and engage merchants, and promote the value of American Express<sup>&reg;</sup> Card acceptance to your customers. Enter your passcode below to access the site and get started."
+			,"passcodeInputLabel":"Passcode"
+			,"submitLabel":"Enter Site"
+			,"errorMessage":"The passcode you entered is invalid."
+			,"helpText":"Don't know your passcode? Please contact your American Express representative for assistance."
+			,"agreement":"You understand and agree that use of the American Express Resource Center and any content that may be obtained there from is at your sole risk. The American Express Resource Center and all content is provided \"as is\" without any warranty of any kind, either express or implied."
+		}
+		,"categories":
+		{
+			"hero":"categories_hero.jpg"
+			,"heroTitle":"Resource Center"
+			,"heroBody":"Use these resources to help understand and promote the value and benefits of American Express<sup>&reg;</sup> Card acceptance."
+			,"items":
+			[
+				{
+					"title":"Signings and Sales Support"
+					,"icon":"signings_sales_support_icon.png"
+					,"body":"Acquire and onboard new customers by sharing the benefits and value of the American Express network."
+					,"url":"#"
+				}
+				,{
+					"title":"Customer Engagement and Activation"
+					,"icon":"customer_engagement_activation_icon.png"
+					,"body":"Engage customers with point-of-sale materials, terminal set-up and best practices."
+					,"url":"#"
+				}
+				,{
+					"title":"Customer Growth and Retention"
+				 	,"icon":"customer_growth_retention_icon.png"
+					,"body":"Drive loyalty and growth by providing customers with value-enhancing programs and materials."
+					,"url":"#"
+				}
+				,{
+					"title":"Shop Small<sup>&reg;1</sup> and Small Business Saturday<sup>&reg;1</sup>"
+					,"icon":"shop_small_small_business_saturday_icon.png"
+					,"body":"Help your small merchants stand out and attract new customers through Shop Small, a nationwide movement dedicated to supporting small business year-round."
+					,"url":"#"
+				}
+				,{
+					"title":"More Resources"
+					,"icon":"more_resources_icon.png"
+					,"body":"Access additional assets and tools to help you expand your knowledge about the American Express network."
+					,"url":"#"
+				}
+			]
+			,"footnotes":"<p><sup>1</sup>Shop Small and Small Business Saturday resources are not currently available to OptBlue merchants.</p>"
+		}
+		,"resources":
+		{
+			"hero":"resources_hero.jpg"
+			,"nav":
+			{
+				"links":{"prev":"#","next":"#"}
+				,"title":"Signings and Sales Support"
+				,"body":"Use these resources to help connect with prospective customers, convey the benefits of the network and promote the value of American Express&reg; Card acceptance."
+			}
+			,"items":
+			[
+				{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"pdf"
+					,"actionLabel":"Download"
+					,"url":"#"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+				,{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"video"
+					,"actionLabel":"Play Video"
+					,"url":"zHFwwwle-qw"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+				,{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"video"
+					,"actionLabel":"Play Video"
+					,"url":"X42udSG_HB0"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+				,{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"link"
+					,"actionLabel":"Visit Link"
+					,"url":"#"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+				,{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"spreadsheet"
+					,"actionLabel":"Download"
+					,"url":"#"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+				,{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"presentation"
+					,"actionLabel":"Download"
+					,"url":"#"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+				,{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"document"
+					,"actionLabel":"Download"
+					,"url":"#"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+				,{
+					"title":"Client will provide content"
+					,"body":"Ebis nis am con nonsed ut quam que core dolo dis exerferio to cusciis molorepedit et fuga. Santem aut vid experiti te doluptaque id modit."
+					,"type":"document"
+					,"actionLabel":"Download"
+					,"url":"#"
+					,"size":"256KB"
+					,"dateAdded":"10/03/14"
+				}
+			]
+			,"footnotes":""
+		}
+		,"modules":
+		{
+			"knowledgeCenter":
+			{
+				"title":"Help Your Customers Grow and Manage Their Businesses"
+				,"body":"<p>The Knowledge Center helps keep your customers informed with articles, videos and insider insights to help make their businesses even more successful.</p><p><a href='#'>Member Insights: Tapping Technology to Streamline Business</a></p><p><a href='#'>Focus on Fraud Protection</a></p>"
+				,"link":
+				{
+					"label":"Visit The Knowledge Center"
+					,"url":"http://knowledgecenter.americanexpress.com"
+				}
+			}
+			,"contentPlaybook":
+			{
+				"body":"<p>Learn how you can share valuable Knowledge Center content with your customers through your own channels.</p>"
+				,"link":
+				{
+					"label":"Download the Content Playbook"
+					,"id":"1005"
+				}
+			}
+			,"salesTipOfTheMonth":
+			{
+				"title":"Sales Tip of the Month"
+				,"body":"<p>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus interdum diam quis quam bibendum, condimentum lobortis lorem suscipit. In dolor nisi, euismod sit amet sodales at.\"</p>"
+				,"profile":
+				{
+					"photo":"profile_photo.jpg"
+					,"name":"Denarius Montarius"
+					,"title":"VP of Sales, American Express"
+				}
+			}
+			,"amex360":
+			{
+				"body":"<p>Access Merchant Operating Regulations and other relevant Policy and Servicing information at <a href='http://amex360.com'>AMEX360.COM</a>.</p>"
+			}
+		}
+	}
+	,"prod":
+	{
+		"nav":
+		{
+			"topLevelItem":{"label":"Marketing Resources","url":"#"}
+			,"dropdown":
+			[
+				{"label":"@title","url":"@category.Url"}
+			]
+			,"knowledgeCenter":{"label":"Knowledge Center","url":"http://knowledgecenter.americanexpress.com"}
+		}
+		,"login":
+		{
+			"title":"Welcome to the American Express Resource Center"
+			,"body":"On this site, you can access valuable information and resources designed to help you acquire and engage merchants, and promote the value of American Express<sup>&reg;</sup> Card acceptance to your customers. Enter your passcode below to access the site and get started."
+			,"passcodeInputLabel":"Passcode"
+			,"submitLabel":"Enter Site"
+			,"errorMessage":"The passcode you entered is invalid."
+			,"helpText":"Don't know your passcode? Please contact your American Express representative for assistance."
+			,"agreement":"You understand and agree that use of the American Express Resource Center and any content that may be obtained there from is at your sole risk. The American Express Resource Center and all content is provided \"as is\" without any warranty of any kind, either express or implied."
+		}
+		,"categories":
+		{
+			"hero":"@mediaHeader.Url"
+			,"heroTitle":"@title"
+			,"heroBody":"@caption"
+			,"items":
+			[
+				{
+					"title":"@title"
+					,"icon":"@category.Icon"
+					,"body":"@category.CategoryListingCaption"
+					,"url":"@category.Url"
+				}
+			]
+			,"footnotes":"@Footnotes"
+		}
+		,"resources":
+		{
+			"hero":"@mediaHeader.Url"
+			,"nav":
+			{
+				"links":{"prev":"#","next":"#"}
+				,"title":"@title"
+				,"body":"@category.CategoryListingCaption"
+			}
+			,"items":
+			[
+				{
+					"title":"@title"
+					,"body":"@caption"
+					,"type":"@type"
+					,"actionLabel":"@actionLabel"
+					,"url":"@resourceUrl"
+					,"size":"@size"
+					,"dateAdded":"@dateAdded"
+				}
+			]
+			,"footnotes":"@footnotes"
+		}
+		,"modules":
+		{
+			"knowledgeCenter":
+			{
+				"title":"@title"
+				,"body":"@knowlegeCenterCallout.Caption"
+				,"link":
+				{
+					"label":"@knowledgeCenterCallout.ButtonLabel"
+					,"id":"@mediaFile.Id"
+				}
+			}
+			,"contentPlaybook":
+			{
+				"body":"@contentPlaybookCallout.Caption"
+				,"link":
+				{
+					"label":"@contentPlaybookCallout.DownloadLinkLabel"
+					,"id":"@mediaFile.Id"
+				}
+			}
+			,"salesTipOfTheMonth":
+			{
+				"title":"@title"
+				,"body":"@salesTipOfMonthCallout.Quote"
+				,"profile":
+				{
+					"photo":"@salesTipOfMonthCallout.SalesPersonPhoto"
+					,"name":"@salesTipOfMonthCallout.SalesPersonName"
+					,"title":"@salesTipOfMonthCallout.SalesPersonTitle"
+				}
+			}
+			,"amex360":
+			{
+				"body":"@amex360Callout.Caption"
+			}
+		}
+	}
+}

@@ -1,0 +1,90 @@
+{
+	"data":
+	{
+		"personal":
+		{
+			"mainTitle":"Earn Cash Back"
+			,"mainBody":"Get rewarded with Cash Back on eligible everyday purchases with the TrueEarnings<sup>&reg;</sup> Card from Costco and American Express"
+			,"mainAltTitle":"Are you a<br />business owner?"
+			,"mainAltBody":"Get the same great benefits and more, including <strong>4% Cash back at US gas stations,</strong> with the TrueEarnings<sup>&reg;</sup> Business Card.<sup>&Dagger;</sup>"
+			,"learnMoreURL":"business.html"
+			,"percentages":
+			[
+				{"percentage":"3","body":"Cash Back at <strong>U.S. gas stations</strong> and on gasoline at Costco*"}
+				,{"percentage":"2","body":"Cash Back at <strong>U.S.&nbsp;restaurants</strong>"}
+				,{"percentage":"2","body":"Cash Back on <strong>eligible travel purchases</strong>, including at Costco"}
+				,{"percentage":"1","body":"Cash Back on <strong>other purchases</strong>, including at Costco"}
+			]
+			,"section1Notes":
+			[
+				"* Up to $4,000 per year in purchases, then 1%. Terms and limitations apply.<sup>&Dagger;</sup>"	
+				,"Cash Back provided annually as a Reward Coupon redeemable for cash or merchandise at U.S. Costco Warehouses. The coupon will be issued in your February billing statement and expires on <strong>August 31st of the year issued.</strong>"
+			]
+			,"cardBenefits":
+			[
+				"<strong>No annual fee</strong> with your paid Costco membership<sup>&dagger;</sup>"
+				,"<strong>0% intro APR</strong> on purchases for 6 months, then a variable APR, currently equal to 15.24%"
+				,"<strong>Flexibility</strong> to pay over time"
+			]
+			,"section3Title":"How much could you earn with your TrueEarnings Card?"
+			,"calculator":
+			[
+				{"label":"U.S. Gas Stations","initialValue":"0","maxValue":"1250","multiplier":"","percentage":"3","incrementValue":"5","maxAnnualSpending":"4000","monthly":"true"}
+				,{"label":"U.S. Restaurants","initialValue":"0","maxValue":"1250","multiplier":"","percentage":"2","incrementValue":"5","monthly":"true"}
+				,{"label":"Eligible Travel Purchases","initialValue":"0","maxValue":"2500","multiplier":"","percentage":"2","incrementValue":"10","monthly":"true"}
+				,{"label":"Other Purchases","subLabel":"Including at Costco","initialValue":"0","maxValue":"6250","multiplier":"","percentage":"1","incrementValue":"25","monthly":"true"}
+			]
+			,"calculatorNotes":"* Up to $4,000 per year in purchases, then 1%. <a href='#'>Terms and limitations apply.</a> Cash back received in an annual reward coupon."
+			,"stickyText":"We offer a TrueEarnings Card account designed for business."
+		}
+		,"business":
+		{
+			"mainTitle":"Earn Cash Back For Your Business"
+			,"mainBody":"On your eligible purchases with the TrueEarnings<sup>&reg;</sup> Business Card from Costco and American Express"
+			,"mainAltTitle":"Are you looking for the personal TrueEarnings Card?"
+			,"mainAltBody":"Get the perfect complement to your Costco membership with the TrueEarnings<sup>&reg;</sup> Card from Costco and American Express."
+			,"learnMoreURL":"personal.html"
+			,"percentages":
+			[
+				{"percentage":"4","body":"Cash Back at <strong>U.S. gas stations</strong> and on gasoline at Costco*"}
+				,{"percentage":"2","body":"Cash Back at <strong>U.S.&nbsp;restaurants</strong>"}
+				,{"percentage":"2","body":"Cash Back on <strong>eligible travel purchases,</strong> including at Costco"}
+				,{"percentage":"1","body":"Cash Back on <strong>other purchases,</strong> including at Costco"}
+			]
+			,"section1Notes":
+			[
+				"* Up to $7,000 per year in purchases, then 1%. Terms and limitations apply.<sup>&Dagger;</sup>"
+				,"Cash back provided annually as a reward coupon redeemable for cash or merchandise at U.S. Costco Warehouses. The coupon will be issued in your February billing statement and expires on <strong>August 31st of the year issued.</strong>"
+			]
+			,"section2Side1":
+			{
+				"benefitsTitle":"Enjoy access to these benefits:"
+				,"cardBenefits":
+				[
+					"No annual fee with your paid Costco membership<sup>&Dagger;</sup>"
+					,"Flexibility to pay over time or pay in full each month"
+				]
+			}
+			,"section2Side2":
+			{
+				"benefitsTitle":"Plus, as a business owner, get these additional benefits:"
+				,"cardBenefits":
+				[
+					"No annual fee for Additional Employee Cards<sup>&Dagger;</sup>"
+					,"Automatically get up to a 10% discount credited to your statement when you use your Card for eligible purchases with OPEN<br />Savings<sup>&reg;</sup> partners<sup>&Dagger;</sup>"
+					,"Simplify the way you and your employees manage Card receipts with ReceiptMatch<sup>&#8480;&Dagger;</sup>"
+				]
+			}
+			,"section3Title":"How much could you earn with your TrueEarnings&reg; Business Card?"
+			,"calculator":
+			[
+				{"label":"U.S. Gas Stations","initialValue":"0","maxValue":"1250","multiplier":"","percentage":"4","incrementValue":"5","maxAnnualSpending":"7000","monthly":"true"}
+				,{"label":"U.S. Restaurants","initialValue":"0","maxValue":"1250","multiplier":"","percentage":"2","incrementValue":"5","monthly":"true"}
+				,{"label":"Eligible Travel Purchases","initialValue":"0","maxValue":"2500","multiplier":"","percentage":"2","incrementValue":"10","monthly":"true"}
+				,{"label":"Other Purchases","subLabel":"Including at Costco","initialValue":"0","maxValue":"6250","multiplier":"","percentage":"1","incrementValue":"25","monthly":"true"}
+			]
+			,"calculatorNotes":"*Up to $7,000 per year in purchases, then 1%. <a href='#'>Terms and limitations apply.</a> You will receive your cash back annually in the form of a reward coupon."
+			,"stickyText":"We offer a TrueEarnings Card designed for personal use."
+		}
+	}
+}

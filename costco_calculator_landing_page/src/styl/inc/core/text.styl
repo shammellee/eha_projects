@@ -1,0 +1,59 @@
+@require 'colors'
+@require 'config'
+@require 'benton_sans'
+
+a
+	text-decoration none
+
+h1,h2,h3,h4,h5,h6,p
+	transition font-size TRANSITION_DURATION TRANSITION_EASE
+
+sup,sub
+	position       relative
+	vertical-align baseline
+
+sup
+	top -.4em
+	font-size 10px
+
+sub
+	top .4em
+
+.textCaps
+	text-transform uppercase
+
+.textBold
+	font-weight bold
+
+.textArial
+	font-family Arial
+
+.textArialBold
+	@extend .textArial
+	@extend .textBold
+
+.textBentonSans
+	font-family 'BentonSans'
+
+.textBentonSansBd
+	font-family 'BentonSans-Bd'
+
+.textBentonSansBk
+	font-family 'BentonSans-Bk'
+
+.textBentonSansLt
+	font-family 'BentonSans-Lt'
+
+.textBentonSansMd
+	font-family 'BentonSans-Md'
+
+body
+	@extend .textArial
+	color COLOR_BODY_TEXT
+	line-height              1.4
+	margin                   0
+	padding                  0
+	-webkit-text-size-adjust none
+	-moz-text-size-adjust    none
+	-ms-text-size-adjust     none
+	-o-text-size-adjust      none

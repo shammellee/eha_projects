@@ -1,0 +1,10 @@
+// SALES TIP OF THE MONTH
+.module.salesTipOfTheMonthModule.bgLightGrey
+	h3.moduleTitle!= DATA.modules.salesTipOfTheMonth.title
+	.moduleBody!= DATA.modules.salesTipOfTheMonth.body
+	.moduleProfile.clearfix
+		span.profilePhoto(style='background:url(#{_config.images.path}/#{DATA.modules.salesTipOfTheMonth.profile.photo}) no-repeat 0 0')!= BLANK
+		p.profileInfo
+			span.salesPersonName!= DATA.modules.salesTipOfTheMonth.profile.name
+			span.salesPersonTitle!= DATA.modules.salesTipOfTheMonth.profile.title
+.module_shadow!= BLANK

@@ -1,0 +1,125 @@
+.contentContainer
+	margin   0 auto
+	padding  34px 150px 29px
+	position relative
+	@media MOBILE_MAX_WIDTH
+		padding 34px 0 29px
+
+.containerFluid
+	position relative
+
+.containerFluidBorderBottomGold
+	@extend .containerFluid
+	border-bottom 8px solid COLOR_GOLD
+
+.containerFluidBorderBottomGoldShadow
+	@extend .containerFluidBorderBottomGold
+	box-shadow    0 3px 5px rgba(0,0,0,.25)
+
+.containerFluidHero
+	@extend .containerFluidBorderBottomGold
+	background url('../img/section_gradient_grey_1.png') repeat-x 0 0
+
+.containerFluidLightGrey
+	@extend .containerFluid
+	background COLOR_GREY_6
+
+.contentContainer700
+	@extend .contentContainer
+	padding 34px 100px 29px
+	width   500px
+	&.marginBottom9px
+		margin-bottom 9px
+	@media TABLET_MAX_WIDTH
+		padding 34px 0 29px
+		width   auto
+	@media MOBILE_MAX_WIDTH
+		width 280px
+
+.contentContainer1000
+	@extend .contentContainer
+	width 700px
+	@media TABLET_MAX_WIDTH
+		padding 34px 5% 29px
+		width auto
+	@media MOBILE_MAX_WIDTH
+		width 280px
+	&.legal
+		font-size .8em
+
+.contentContainer1000Hero
+	@extend .contentContainer
+	background url('../img/hero.jpg') no-repeat 50% 0
+	height     247px
+	overflow   hidden
+	width 700px
+	@media TABLET_MAX_WIDTH
+		background-position right 0
+		padding 34px 6% 29px
+		width               auto
+	@media MOBILE_MAX_WIDTH
+		background-size     528px
+		height              116px
+
+.contentContainer1000Centered
+	@extend .contentContainer1000
+	text-align center
+
+.separatorShadow
+	background url('../img/page_shadow.png') no-repeat 50% 0
+	height     9px
+	margin     13px auto 5px
+	&.marginTop13px
+		margin-top 13px
+
+.separator700
+	width  700px
+	margin 16px auto 9px
+
+.separator700BorderBottomGrey
+	@extend .separator700
+	border-bottom 4px solid COLOR_GREY_5
+	@media TABLET_MAX_WIDTH
+		border-bottom none
+		margin 7px
+
+.accordionHead
+	background  COLOR_GREY_1
+	color       COLOR_WHITE
+	cursor      pointer
+	display     none
+	font-size   1.3em
+	padding     3px 0
+	user-select none
+	@media TABLET_MAX_WIDTH
+		display block
+		padding 3px 5%
+		.accordionHeadContentContainer
+			width auto
+			.accordionIcon
+				float right
+	@media MOBILE_MAX_WIDTH
+		.accordionHeadContentContainer
+			margin 0 auto
+			width  280px
+	.accordionIcon
+		background-image  url('../img/icons.png')
+		background-repeat no-repeat
+		position          relative
+		&.expand
+			background-position 0 -222px
+			height              21px
+			width               @height
+			top                 4px
+		&.contract
+			background-position 0 -253px
+			height              11px
+			width               21px
+			top                 9px
+
+.accordionContentContainer
+	@media TABLET_MAX_WIDTH
+		display none
+		padding 0 5%
+	@media MOBILE_MAX_WIDTH
+		padding 0

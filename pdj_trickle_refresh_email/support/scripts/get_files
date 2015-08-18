@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+[ $# -lt 2 ] && { echo -e "\033[31mUsage:\033[0m ${0##*/} <directory> <extension>"; exit 1; }
+
+if [[ -d "$1" && -n $2 ]]
+then
+	_files=();
+	for f in "$1"/*."$2"
+	do
+		_files+=( "${f// /\\ }" )
+	done
+	echo ${_files[@]}
+else
+	echo "No ${2} files found in ${1}"
+	exit 1
+fi

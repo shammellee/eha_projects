@@ -1,0 +1,50 @@
+@require 'nib'
+global-reset()
+@require 'inc'
+
+div#iNavNGI_Header .iNavShadow
+	position absolute
+	width    100%
+
+.goldCard
+	background url('../img/amex_gold_business_cc.png') no-repeat left top
+	height     186px
+	position   absolute
+	right      153px
+	top        25px
+	width      290px
+	@media TABLET_MAX_WIDTH
+		right 5%
+	@media TABLET_MAX_WIDTH_2
+		position            static
+		right               inherit
+		top                 inherit
+		margin              0 auto 25px
+		background-size     180px
+		height              108px
+		width               172px
+		background-position -4px -4px
+
+li.listItemIcon
+	color          COLOR_GREY_1
+	font-size      .72em
+	letter-spacing -.012em
+	line-height    1.5
+	margin         0 0 24px 45px
+	position       relative
+	&.last
+		margin-bottom 0
+	.snap,.tag,.transfer,.done
+		position absolute
+	.snap
+		left -41px
+		top  -1px
+	.tag
+		left -43px
+		top  1px
+	.transfer
+		left -49px
+		top  -1px
+	.done
+		left -42px
+		top  1px

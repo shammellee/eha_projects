@@ -1,0 +1,66 @@
+@require 'inc/shared'
+@require 'inc/sprites/personal.css'
+
+#section1
+	#mainTextShell
+		#mainText
+			#main
+				.title
+					emSize        2.5
+					lead          1.05
+					margin-bottom 8px
+					track         -.017
+			#alt
+				.title
+					emSize 1.1
+				.body
+					emSize        .75
+					margin-bottom 16px
+					track         .01
+
+#section2
+	background-color COLOR_BLUE_GREEN
+	color            COLOR_WHITE
+	.content
+		#benefits
+			margin-bottom 6px
+			.benefit
+				color         COLOR_WHITE
+				display       block
+				float         left
+				height        85px
+				lead          1.35
+				overflow      hidden
+				track         .018
+				width         232px
+				&.first
+					padding-right 8px
+				&.separator
+					border-left   1px solid COLOR_SPRAY
+					margin-left   20px
+					padding-left  22px
+					padding-right 4px
+				strong
+					@extend .textArialBold
+					color COLOR_WHITE
+
+#section3
+	.content
+		#calculatorOuterShell
+			#calculatorInnerShell
+				#sliders
+					.sliderWrapper
+						label
+							color  COLOR_BLUE_GREEN
+						.wrapper_slider
+							.sliderValue
+								color COLOR_BLUE_GREEN
+							.postfix
+								.period
+									color COLOR_BLUE_GREEN
+			#totalOuterShell
+				background-color COLOR_BLUE_GREEN
+
+#stickyShell
+	.bar
+		background-color COLOR_SAPPHIRE

@@ -1,0 +1,42 @@
+extends inc/templates/internal
+
+block title
+	title #{PROJECT_NAME} &rsaquo; Categories
+
+append css
+	+loadCss(_config.css.path + '/categories.css')
+
+block hero
+	#hero(style='background:url(#{_config.images.path}/#{DATA.categories.hero}) no-repeat 0 0')
+	#heroTextShell
+		#heroText
+			h1.title!=DATA.categories.heroTitle
+			p.body!=DATA.categories.heroBody
+		.heroTextFooter
+	.hero_shadow
+
+block list
+	#categoryListShell.listShell
+		// CATEGORY LIST
+		ul#categoryList
+
+			- var itemCount = DATA.categories.items.length
+
+			each c,i in DATA.categories.items
+
+				li.category
+					span.categoryIcon(style='background:url(#{_config.images.path}/#{c.icon}) no-repeat 0 0')!= BLANK
+					h2.categoryTitle
+						a(href!=c.url)
+							!= c.title
+							span.icon_category_title_arrow
+					p.listItemBody.categoryBody!= c.body
+					if i < itemCount - 1
+						li.category_shadow!= BLANK
+
+block footnotes
+	if DATA.categories.footnotes
+		// =============
+		// = FOOTNOTES =
+		// =============
+		#footnotes!= DATA.categories.footnotes

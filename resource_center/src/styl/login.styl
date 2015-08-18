@@ -1,0 +1,69 @@
+@require 'inc/core/config'
+@require 'inc/core/mixins'
+@require 'inc/core/text'
+
+#background
+	background url(IMG_DIR + '/login_background.jpg')
+	height     600px
+
+#loginPanelShell
+	emSize      .75
+	height      302px + 9
+	left        50%
+	overflow    hidden
+	position    absolute
+	width       462px + 8
+	margin-left -(@width/2)
+	margin-top  -(@height/2)
+	top	        50%
+	#loginPanel
+		background COLOR_PANEL_BACKGROUND
+		border     1px solid COLOR_NONE
+		display    block
+		height     100%
+		padding    28px
+		&.error
+			border-color COLOR_ICON_GREY
+		.loginTitle
+			@extend .textArialBold
+			@extend .textByzantium
+			emSize        1.3
+			letter-spacing .014em
+			margin-bottom 12px
+			margin-top    -4px
+		.loginBody
+			@extend .textGrey
+			emSize 1
+			line-height 1.2
+			margin-bottom 20px
+		form
+			margin-bottom 12px
+			.passcodeLabel
+				@extend .textGrey
+				display       block
+				emSize        1
+				margin-bottom 3px
+				margin-left   1px
+				.errorMessage
+					@extend .textOblique
+					color       COLOR_LOGIN_PANEL_ERROR
+					margin-left 40px
+			#PasswordTextbox
+				@extend .textGrey
+				border         1px solid COLOR_LOGIN_PANEL_BORDER
+				letter-spacing .15em
+				line-height    2.4
+				margin-left    1px
+				margin-right   8px
+				padding        0 6px
+				width          298px
+				&.error
+					color desaturate(lighten(COLOR_LOGIN_PANEL_ERROR,50%),50%)
+					border-color COLOR_LOGIN_PANEL_ERROR
+		.finePrint
+			@extend .textGrey
+			emSize      .7
+			line-height 1.33
+		.finePrintSeparator
+			border-bottom 1px solid COLOR_NAV_HOVER_BORDER_GREY
+			margin 13px 0 17px

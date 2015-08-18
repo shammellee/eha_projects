@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+srcDir=src
+buildDir=build
+buildImgDir="${buildDir}/img"
+srcImgDir="${srcDir}/img"
+gfxDir="${srcImgDir}/gfx"
+patternDir="${srcImgDir}/patterns"
+photoDir="${srcImgDir}/photos"
+
+cp -R "$gfxDir"/* "${buildImgDir}"
+cp -R "$patternDir"/* "${buildImgDir}"
+cp -R "$photoDir"/* "${buildImgDir}"

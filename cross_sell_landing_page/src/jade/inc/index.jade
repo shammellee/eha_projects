@@ -1,0 +1,134 @@
+block variables
+
+doctype strict
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport',content='width=device-width, initial-scale=1')
+		title AMEX
+		link(media='all',type='text/css',href='https://www.aexp-static.com/nav/ngn/css/inav_responsive.css',rel='stylesheet')
+		link(type='text/css',href='css/main.css',rel='stylesheet')
+
+	//- ===============
+	//- = iNav HEADER =
+	include ../../vendor/inav/responsive_head.html
+	include ../../vendor/inav/header.html
+	//- ===============
+	.containerFluidHero
+		.contentContainer1000Hero
+			h2.alignWithTextHeroLg.textHeroSm You&rsquo;re pre-approved!
+			h2.textHeroLg Hard Work. Rewarded.
+
+	.containerFluidLightGrey
+		.contentContainer1000
+			.goldCard
+			h2.overviewHead1 Welcome Offer:
+			h1.overviewHead2 Earn #{tokens.mrPoints}
+			h2.overviewHead3 Membership Rewards&reg; points
+			p.overviewGraph1.
+				after you spend $5,000 on eligible purchases with the Business Gold Rewards Card within the first 3 months of Card Membership. Your application must be received by October 6, 2014 to be eligible for this offer.<sup>1</sup>
+			form(action="#{applyNowURL}",method='get'): button.cta_01.buttonCTA(tabindex='0',type='submit') Apply Now
+			p.overviewGraph2.
+				Or call <a tabindex='0' class='phoneLink' href='tel:#{tokens.phone}'>#{tokens.phone}</a> with RSVP code #{tokens.rsvp} to get a business consultation.
+			p.overviewGraph3.
+				The introductory annual fee for the Business Gold Rewards Card is $0 for the first year, then $175.
+
+	.containerFluidBorderBottomGoldShadow
+		.accordionHead(data-section_id="#{sections[0].id}")
+			.accordionHeadContentContainer
+				span.accordionTitle!= sections[0].label
+				span.accordionIcon.expand
+		.accordionContentContainer(data-section_id="#{sections[0].id}")
+			#businessRewards.contentContainer700
+				h1.textSectionHeadline!= sections[0].label
+				h2.textSectionSubhead Make purchases rewarding<sup>2</sup>
+				p.textSectionGraph.
+					Not only does the Business Gold Rewards Card offer business-sized purchasing power<br /> to help you run and grow your business, you&#39;ll also earn points for purchases made<br /> on the Card.
+				ul.points
+					li
+						span.pointMultiplier 3X
+						p.mobileTopAdjust Points on airfare purchased directly from airlines
+					li.multiLine
+						span.pointMultiplier 2X
+						p Points on US purchases for advertising in select media, shipping, at gas stations and made directly from select computer hardware, software, and cloud computing providers
+					li
+						span.pointMultiplier 1X
+						p Points on other purchases
+				p.textPointsFinePrint.
+					Terms and limitations apply. 3X and 2X apply to purchases up to $100,000 in each of the 5 industry categories per year (Computer Hardware, Software, and Cloud Computing is a single category).
+
+			.separatorShadow
+
+			.contentContainer700
+				h2.textSectionSubhead Boost the value you get from your Business Gold Rewards Card with the Built-In OPEN Savings&reg; benefit<sup>3</sup>
+				p.textSectionGraph.
+					Automatically get up to an extra 4 points for every eligible dollar spent with OPEN Savings partners. Just use your Card for eligible purchases with OPEN Savings&reg; partners including FedEx, Hertz&reg;, and others, and you&rsquo;re automatically rewarded.
+
+		.separator700BorderBottomGrey
+
+		.accordionHead(data-section_id="#{sections[1].id}")
+			.accordionHeadContentContainer
+				span.accordionTitle!= sections[1].label
+				span.accordionIcon.expand
+		.accordionContentContainer(data-section_id="#{sections[1].id}")
+			#benefitsAndTools.contentContainer700
+				h1.textSectionHeadline!= sections[1].label
+				h2.textSectionSubhead Get the Card that comes with business-sized buying power
+				p.textSectionGraph.
+					The Business Gold Rewards Card from American Express OPEN isn&#39;t made for little expenses. It&#39;s made for running your business. You could <strong>book company travel</strong>, pay your fleet&#39;s <strong>gas</strong>, outfit your office with <strong>equipment</strong>, and <strong>advertise</strong> your business. The Card<br /> gives you <strong>spending power that can grow as your business grows</strong>. The more you use<br /> your Card to run your business, the more points you can earn.
+
+			.separatorShadow
+
+			.contentContainer700
+				h2.textSectionSubhead ReceiptMatch<sup>SM</sup> with QuickBooks<span class='subscript'>&reg;</span><sup>4</sup>
+				p.textSectionGraph.
+					American Express OPEN offers the only Business Cards that directly integrate<br /> with Intuit QuickBooks. 
+				h3.textSectionListHead Here&#39;s how it works:
+				ul.receiptMatch
+					li.listItemIcon
+						span.snap
+						span.textBentonSansBd.textCaps.textNavy Snap: 
+						| Take a picture of your receipt and ReceiptMatch will match and<br /> attach it to your Card transaction.
+					li.listItemIcon
+						span.tag
+						span.textBentonSansBd.textCaps.textNavy Tag: 
+						| Label the transaction with your own QuickBooks category, right from<br /> your American Express online statement of ReceiptMatch mobile app.
+					li.listItemIcon
+						span.transfer
+						span.textBentonSansBd.textCaps.textNavy Transfer To QuickBooks: 
+						| Review and send the transaction data with<br /> a link to the receipt image directly to your QuickBooks company file.
+					li.listItemIcon.last
+						span.done
+						span.textBentonSansBd.textCaps.textNavy Done: 
+						| You don&#39;t have to enter transaction data manually into<br /> QuickBooks&mdash;your expense is now filed.
+
+			.separatorShadow.marginTop13px
+
+			.contentContainer700.marginBottom9px
+				h2.textSectionSubhead Earn Membership Rewards&reg; points faster by adding Employee Cards to your account
+				p.textSectionGraph.marginBottom35px.
+					Earn Membership Rewards&reg; points faster by adding Additional Cards to your account. Make spending and expensing easier, while <strong>maintaining financial control with limits<sup>5</sup>, alerts and summary reports</strong>. With the Business Gold Rewards Card, you can earn up to 3X points on select business purchases, up to $100,000 per category each year. Introductory annual fee for Additional Business Gold Rewards Cards in the first year is $0; then, $50 for the first Additional Business Gold Rewards Card and no fee for other Additional Cards.
+				form(action="#{applyNowURL}",method='get'): button.cta_01.buttonCTA(tabindex='0',type='submit') Apply Now
+
+	#legalContainer.containerFluid
+		.contentContainer1000.legal
+			include legal
+
+	div.sideNav
+		ul
+			li.first.active: a(tabindex='0',href='#businessRewards') Business Rewards
+			li.last: a(tabindex='0',href='#benefitsAndTools') Benefits and Tools
+
+	//- devMode is set in Makefile
+	if devMode
+		script(src='js/jquery-#{jqueryVersion}.js')
+		script(src='js/jquery-ui-#{jqueryUIVersion}.js')
+		script(src='js/main.js')
+	else
+		script(src='js/main.min.js')
+
+	//- ===============
+	//- = iNav FOOTER =
+	include ../../vendor/inav/footer.html
+	include ../../vendor/inav/responsive_foot.html
+	//- ===============

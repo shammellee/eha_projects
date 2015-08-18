@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+[ $# -eq 2 ] || echo -e "\033[35mUsage:\033[0m ${0##*/} <src> <dest>"
+
+if [ -d "$1" ]
+then
+	if [ -d "$2" ]
+	then
+		shopt -s extglob
+		cp -R "$1"/*.* "$2" 
+	else
+		echo -e "\033[31mDirectory not found:\033[0m ${2}"
+	fi
+else
+	echo -e "\033[31mDirectory not found:\033[0m ${1}"
+fi

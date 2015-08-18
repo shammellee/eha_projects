@@ -1,0 +1,142 @@
+//- template from which all pages extend
+include ../config
+include ../mixins/core
+
+block config
+	- pageVersion = pageVersion || ''
+
+doctype strict
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		block title
+			title!= PROJECT_NAME
+		block css
+			+loadCSS(_config.css.path + '/' + pageVersion)
+
+	// =================
+	// = BOOMBOX BEGIN =
+	// =================
+	body
+		#shell
+			+container#header
+				+content#header
+					span.logo_amex
+					span.logo_costco
+
+			// SECTION 1 BEGIN
+			block section1
+				- DATA = data[pageVersion]
+
+				+container#section1
+					div(class='bg_section_1_' + pageVersion)
+					+content
+						#mainShell
+							.cc_large_amex
+							#mainTextShell.clearfix
+								#mainText
+									#main
+										h1.title.textBentonSans.textCaps!= DATA.mainTitle
+										p.body.textBentonSans!= DATA.mainBody
+										a.cta_large_blue(href='#'): span.textBentonSansBd!= _config.text.cta1
+									#alt
+										h2.title.textBentonSansMd!= DATA.mainAltTitle
+										p.body.textArial!= DATA.mainAltBody
+										a.cta_small_blue(href!= DATA.learnMoreURL): span.textBentonSansBd!= _config.text.cta2
+						#percentageShell.clearfix
+							#titleShell.clearfix
+								h3.title.textBentonSans!= _config.text.cashBackTitle
+								span.calculate
+									span.icon_calculator
+									a.scrollToCalculator.label.textBentonSans(href='#section3')!= _config.text.calculateLabel
+							ul#percentages.clearfix
+								- var pLen  = DATA.percentages.length
+								each p,i in DATA.percentages
+									li.percentage(class='bg_percentage_' + pageVersion + (i != pLen - 1 ? ' space' : ''))
+										h3.percent
+											span.value.textBentonSans!= p.percentage
+											span.sign.textBentonSans %
+										p.body.textBentonSans!= p.body
+							#notesShell
+								each n in DATA.section1Notes
+									p.textBentonSans!= n
+							#CTAShell
+								a.cta_small_blue(href='#'): span.textBentonSansBd!= _config.text.cta1
+			// SECTION 1 END
+			//
+			// SECTION 2 BEGIN
+			block section2
+				h1 section 2
+			// SECTION 2 END
+			//
+			// SECTION 3 BEGIN
+			block section3
+				+container#section3(style='background-image:url(' + _config.images.path + '/bg_calculator_' + pageVersion + '.jpg)')
+					+content
+						h3.title.textBentonSans!= DATA.section3Title
+						#calculatorOuterShell
+							.backToTop
+								a.link.scrollToTop.textBentonSansMd(href='#')!= _config.text.scrollToTopLabel
+								span.icon_scroll_to_top
+							+boxShadow
+								#calculatorInnerShell
+									h4.help.textBentonSansBd!= _config.text.section3Help
+									+vSpace(12)
+									form#sliders(method='post',accept-charset='utf-8')
+										- var removeRegex = /[.!@,|#%^*'"$]/g
+										each s,i in DATA.calculator
+											.sliderWrapper
+												label.textBentonSansBd(for='amount' + (i + 1))
+													!= s.label
+													if s.subLabel
+														span.subLabel!= s.subLabel
+												.slider.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all(id='slider' + (i + 1),rel=i + 1)
+													.ui-slider-handle.ui-state-default.ui-corner-all(class!='btn_' + s.label.toLowerCase().replace(removeRegex,'').replace(/\s/g,'_'))
+													.slider_track
+												span.wrapper_slider
+													span.sliderValue.textBentonSansBd(id='amount' + (i + 1),name='amount' + (i + 1),tabindex=i+1,data-max!=s.maxValue,data-multiplier!=s.multiplier,data-percentage!=s.percentage,data-inc!=s.incrementValue,data-max-annual-spending!=s.maxAnnualSpending,data-monthly!=s.monthly,rel='0',type='text')!= '$' + s.initialValue
+													span.postfix
+														span.period.textBentonSansBd /month
+									p.footnotes.textArial!= DATA.calculatorNotes
+								#totalOuterShell.clearfix
+									a.cta_small_grey(href='#'): span.textBentonSansBd!= _config.text.cta1
+									#totalInnerShell
+										span.label.textArialBold!= _config.text.calculatorTotalLabel
+										span.bg_annual_reward
+											span#total.textBentonSansMd
+				+container#fillagree
+			// SECTION 3 END
+			//
+			// SECTION 4 BEGIN
+			block section4
+			// SECTION 4 END
+
+		#aux
+			// STICKY
+			#stickyShell
+				.bg_sticky_shadow
+				.bar
+					span.stickyText.textBentonSansMd
+						!= DATA.stickyText + BLANK
+						a.learnMore.textBentonSansMd(href!= DATA.learnMoreURL)!= _config.text.cta2
+					span.cc_small_amex
+			block aux
+
+		if DEV_MODE
+			block devJs
+				+loadJS(_config.js.path + '/' + JQUERY)
+				+loadJS(_config.js.path + '/' + JQUERY_UI)
+				+loadJS(_config.js.path + '/core')
+				+loadJS(_config.js.path + '/calculator')
+		else
+			block prodJs
+				+loadJS(_config.js.path + '/main.min')
+
+		// ===============
+		// = BOOMBOX END =
+		// ===============
+
+		// ===============
+		// = iNav FOOTER =
+		// ===============
+		include ../../../vendor/inav/footer.html

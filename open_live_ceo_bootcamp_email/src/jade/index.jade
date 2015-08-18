@@ -1,0 +1,150 @@
+include inc/config
+include inc/mixins/email_structure
+
+doctype strict
+html(xmlns='http://www.w3.org/1999/xhtml')
+	head
+		meta(http-equiv='Content-Type',content='text/html charset=UTF-8')
+		meta(name='viewport',content='width=device-width; initial-scale=1.0')
+		title #{title}
+		include inc/css/email_reset
+	body(style='font-family:Arial,sans-serif')
+		+table(align='center',bgcolor='#{COLOR_BG_MAIN}',width='100%',style='background-color:#{COLOR_BG_MAIN};vertical-align:top')
+			tr
+				td(align='center',width='100%',style='width:100%')
+			tr
+				td(align='center',width='100%',style='width:100%')
+			tr
+				td(align='center',width='100%',style='width:100%')
+					+table(align='center',width=CONTENT_WIDTH_FULL)
+						tr: td(width='100%'): img(height='305',width=CONTENT_WIDTH_FULL,src='#{images.path}/#{images.header}',style='display:block')
+						tr: td(bgcolor=COLOR_ACCENT,height=config.headerBorderWidth,width='100%',style='background-color:#{COLOR_ACCENT}')
+						tr: td(width='100%')
+							+table(width=CONTENT_WIDTH_FULL)
+								// SECTION 1
+								tr(bgcolor=COLOR_BG_MAIN,style='background-color:#{COLOR_BG_MAIN}'): +td_vSpace(25,3)
+
+								tr(bgcolor=COLOR_BG_MAIN,style='background-color:#{COLOR_BG_MAIN}')
+									+td_hSpace(CONTENT_PADDING)
+									td(valign='top',width=CONTENT_WIDTH_MAIN)
+
+										// PARAGRAPH 1
+										span(style='color:#192775;font-size:19px;font-weight:bold;letter-spacing:-.01em')
+											p(style='line-height:23px;margin:0;padding:0')!= text.section1.paragraph1
+
+										+table_vSpace(13)
+
+										// PARAGRAPH 2
+										span(style='color:#4C5E6C;font-size:14px;letter-spacing:-.014em')
+											p(style='line-height:18px;margin:0;padding:0')
+												span(style='font-size:14px;font-weight:bold')!= text.section1.paragraph2BoldText
+												| !{BLANK}!{text.section1.paragraph2}
+
+										+table_vSpace(9)
+
+										// PARAGRAPH 3
+										span(style='color:#4C5E6C;font-size:14px;letter-spacing:-.011em')
+											p(style='line-height:18px;margin:0;padding:0')!= text.section1.paragraph3
+									+td_hSpace(CONTENT_PADDING)
+
+								tr(bgcolor=COLOR_BG_MAIN,style='background-color:#{COLOR_BG_MAIN}'): +td_vSpace(21,3)
+
+								// SECTION 2::ROW 1
+								tr(bgcolor='#F1F3F4',style='background-color:#F1F3F4;color:#4C5E6C'): +td_vSpace(30,3)
+
+								tr(bgcolor='#F1F3F4',style='background-color:#F1F3F4;color:#4C5E6C')
+									+td_hSpace(CONTENT_PADDING)
+									td(width=CONTENT_WIDTH_MAIN)
+										+table(width='100%')
+											tr
+												td(valign='top',width='77'): span(style='font-size:15px;font-weight:bold')
+													p(style='line-height:16px;margin:0;padding:0;padding-top:2px')!= text.section2.row1.column1
+												+td_hSpace(4)
+												+td_hSpace(26)(style='border-left:1px solid #{COLOR_ACCENT}')
+												td(valign='top',width='394',style='font-size:15px')
+													span: p(style='line-height:20px;margin:0;padding:0')!= text.section2.row1.column2.date
+													span: p(style='line-height:20px;margin:0;padding:0')!= text.section2.row1.column2.time
+
+													+table_vSpace(12)
+
+													span: p(style='line-height:20px;margin:0;padding:0')!= text.section2.row1.column2.location
+													span: p(style='line-height:20px;margin:0;padding:0')!= text.section2.row1.column2.venue
+													span: p(style='line-height:20px;margin:0;padding:0')!= text.section2.row1.column2.address
+													span: p(style='line-height:20px;margin:0;padding:0') !{text.section2.row1.column2.city}, !{text.section2.row1.column2.state} !{text.section2.row1.column2.zip}
+									+td_hSpace(CONTENT_PADDING)
+
+								tr(bgcolor='#F1F3F4',style='background-color:#F1F3F4'): +td_vSpace(28,3)
+
+								// SECTION 2::ROW 2
+								tr(bgcolor='#F1F3F4',style='background-color:#F1F3F4;color:#4C5E6C')
+									+td_hSpace(CONTENT_PADDING)
+									td(width=CONTENT_WIDTH_MAIN)
+										+table
+											tr
+												td(valign='top',width='77'): span(style='font-size:15px;font-weight:bold')
+													p(style='line-height:16px;margin:0;padding:0;padding-top:2px')!= text.section2.row2.column1
+												+td_hSpace(4)
+												+td_hSpace(26)(style='border-left:1px solid #{COLOR_ACCENT}')
+												td(valign='top',width='394',style='font-size:15px;')
+													+table_vSpace(2)
+
+													span: p(style='line-height:16x;margin:0;padding:0')!= text.section2.row2.column2.line1
+
+													+table_vSpace(12)
+
+													span: p(style='line-height:16x;margin:0;padding:0')!= text.section2.row2.column2.line2
+
+													+table_vSpace(12)
+
+													span: p(style='line-height:16x;margin:0;padding:0')!= text.section2.row2.column2.line3
+
+													+table_vSpace(12)
+
+													span: p(style='line-height:16x;margin:0;padding:0')!= text.section2.row2.column2.line4
+									+td_hSpace(CONTENT_PADDING)
+
+								tr(bgcolor='#F1F3F4',style='background-color:#F1F3F4'): +td_vSpace(38,3)
+
+								// SECTION 3
+								tr(bgcolor=COLOR_BG_MAIN,style='background-color:#{COLOR_BG_MAIN}'): +td_vSpace(23,3)
+
+								tr(bgcolor='#{COLOR_BG_MAIN}',style='background-color:#{COLOR_BG_MAIN}')
+									+td_hSpace(CONTENT_PADDING)
+									td(valign='top',width=CONTENT_WIDTH_MAIN,style='font-size:14px;text-align:center')
+										span(style='color:#666666;font-style:italic')
+											p(style='line-height:30px;margin:0;padding:0')!= text.section3.line1
+										span(style='color:#666666'): p(style='margin:0;padding:0')!= text.section3.line2
+										span(style='color:#666666'): p(style='margin:0;padding:0')
+											| !{text.section3.line3}!{BLANK}
+											a(href='http://#{urls.ceoBootCamp}',style='color:#666666;font-weight:bold;text-decoration:none')!= urls.ceoBootCamp
+									+td_hSpace(CONTENT_PADDING)
+
+								tr(bgcolor=COLOR_BG_MAIN,style='background-color:#{COLOR_BG_MAIN}'): +td_vSpace(32,3)
+
+								// SECTION 4
+								tr(bgcolor=COLOR_ACCENT,style='background-color:#{COLOR_ACCENT}')
+									+td_hSpace(CONTENT_PADDING)
+									td(width=CONTENT_WIDTH_MAIN)
+										+table(height='52',width='100%',style='color:#FFFFFF')
+											tr
+												td
+													span(style='font-size:12px;font-weight:bold;text-transform:uppercase'): p(style='margin:0;padding:0')!= text.section4.field1
+													span(style='font-size:12px')
+														p(style='margin:0;padding:0')!= text.section4.field2
+															| !{BLANK}
+															a(href='mailto:#{urls.ceoBootCampEmail}',style='color:#FFFFFF;text-decoration:none')!= urls.ceoBootCampEmail
+												td
+												td(width='147'): a(href='http://#{urls.ceoBootCamp}'): img(src='#{images.path}/#{images.register}')
+									+td_hSpace(CONTENT_PADDING)
+
+								// SECTION 5
+								tr
+									+td_hSpace(CONTENT_PADDING)
+									td(width=CONTENT_WIDTH_MAIN)
+										+table(width='100%')
+											tr
+												td
+													span(style='color:#192775;font-size:11px;font-weight:bold'): p!= text.section5
+												td
+												td(width='147'): a(href=urls.open): img(src='#{images.path}/#{images.logo}')
+									+td_hSpace(CONTENT_PADDING)

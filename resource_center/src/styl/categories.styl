@@ -1,0 +1,66 @@
+@require 'inc/core/mixins'
+@require 'inc/core/colors'
+@require 'inc/core/text'
+@require 'inc/sprites/categories.css'
+
+/*
+#heroTextShell
+	#heroText
+		h1.title!=DATA.categories.heroTitle
+		p.body!=DATA.categories.heroBody
+	.heroTextFooter
+*/
+
+#heroTextShell
+	height   190px
+	overflow hidden
+	position absolute
+	right    80px
+	top      115px
+	width    420px
+	#heroText
+		background COLOR_MAIN_GREY
+		height 105px
+		overflow hidden
+		padding 13px 24px
+		.title
+			@extend .textWhite
+			@extend .textBentonSansMd
+			emSize        1.36
+			margin-bottom 9px
+		.body
+			@extend .textWhite
+			@extend .textBentonSansBk
+			emSize .8
+			letter-spacing .045em
+			line-height    1.6
+	.heroTextFooter
+		background COLOR_BYZANTIUM url(IMG_DIR + '/fillagree.png') no-repeat 0 0
+		height 59px
+
+#categoryList
+	margin-top 58px
+	.category
+		padding-bottom 46px
+		padding-top    1px
+		position       relative
+		.categoryIcon
+			display  inline-block
+			height   50px
+			position absolute
+			top      4px
+			width    57px
+		.categoryTitle
+			margin-bottom 12px
+			margin-left   76px
+			width         380px
+			a
+				background COLOR_BODY_BACKGROUND
+				.icon_category_title_arrow
+					margin-left    10px
+					vertical-align middle
+		.categoryBody
+			margin-left 78px
+			width 380px
+	.category_shadow
+		margin-bottom 45px

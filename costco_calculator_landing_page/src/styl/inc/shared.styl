@@ -1,0 +1,358 @@
+@require 'nib'
+global-reset()
+
+@require 'inc/core'
+@require 'inc/sprites/shared.css'
+@require 'inc/sprites/single_pixel_horizontal.css'
+@require 'inc/box_shadow'
+
+div#iNavNGI_Header .iNavShadow
+	margin   auto
+	position absolute
+	width    100%
+
+#iNavNGI_FooterMain.iNNewFoot
+	div#iNavNGI_FooterCont
+		float   none
+		margin  0 auto
+		padding 0
+
+.clearfix
+	clearfix()
+
+
+#header.container
+	border-bottom 1px solid COLOR_LILY_WHITE
+
+#header.content
+	height 85px
+
+.container
+	.content
+		margin 0 auto
+		padding 0 10px
+		position relative
+		width 798px
+
+[class^=icon_],[class^=logo_],[class^=cta_]
+	display inline-block
+
+.logo_amex
+.logo_costco
+	position absolute
+
+.logo_amex
+	left 5px
+	top  21px
+
+.logo_costco
+	right 11px
+	top   27px
+
+.cc_large_amex
+	left     -22px
+	position absolute
+	top      33px
+
+[class*=bg_section_1_]
+	background-repeat repeat-x
+	position          absolute
+	width             100%
+	z-index           0
+
+.section_shadow
+	background url(IMG_DIR + '/section_shadow.png') no-repeat center 0
+	bottom     -17px
+	height     -(@bottom)
+	position   relative
+
+#section1
+	#mainShell
+		padding-top 58px
+		#mainTextShell
+			border-bottom 1px solid COLOR_GAINSBORO
+			padding-bottom 22px
+			position      relative
+			#mainText
+				float right
+				margin-right -3px
+				#main
+					float         left
+					padding-right 23px
+					width         360px
+					.title
+						color         COLOR_LAPIS_LAZULI
+					.body
+						emSize        .9
+						lead          1.5
+						margin-bottom 16px
+						margin-left   1px
+						track         .006
+					.cta_large_blue
+						margin-left 1px
+				#alt
+					border-left  1px solid COLOR_SILVER
+					float        left
+					padding-left 21px
+					padding-top  2px
+					width        162px
+					.title
+						color         COLOR_LAPIS_LAZULI
+						lead          1.2
+						margin-bottom 6px
+					.body
+						strong
+							@extend .textArialBold
+							track   .001
+					.cta_small_blue
+						margin-left 1px
+	#percentageShell
+		padding-top   24px
+		margin-bottom 14px
+		#titleShell
+			margin-bottom 16px
+			.title
+				color       COLOR_LAPIS_LAZULI
+				emSize      1.45
+				float       left
+				margin-left -2px
+				track       .005
+			.calculate
+				display      inline-block
+				float        right
+				.icon_calculator
+					margin-right 8px
+					position     relative
+					top          8px
+				.label
+					border-bottom 1px solid COLOR_LAPIS_LAZULI
+					color         COLOR_LAPIS_LAZULI
+					emSize        .84
+					position      relative
+					top           2px
+		#percentages
+			margin-bottom 11px
+			li
+				background-repeat repeat-x
+				color             COLOR_WHITE
+				display           block
+				float             left
+				height            130px
+				overflow          hidden
+				padding           17px
+				width             161px
+				&.space
+					margin-right 6px
+				.percent
+					position      relative
+					top           -9px
+					margin-bottom -16px
+					.value
+						emSize 3.7
+					.sign
+						emSize   1.8
+						position absolute
+						top      10px
+				.body
+					emSize 1
+					font-size s('.95em\9') // target ie 6-8
+					s('[;font-size:.95em;];') // target chrome <= 28 + safari <= 7 + opera >= 14
+					lead   1.35
+					track  -.01
+					strong
+						@extend .textBentonSansBd
+						track -.025
+		#notesShell
+			float left
+			width 562px
+			p
+				emSize        .68
+				margin-bottom 11px
+				track         -.032
+				strong
+					@extend .textBentonSansBd
+		#CTAShell
+			float        right
+			margin-top   20px
+			margin-right -1px
+
+#section2
+	position relative
+	.content
+		padding 24px 0 7px
+		&>.title
+			emSize        1.45
+			track         .007
+			margin-bottom 18px
+
+#section3
+	background-position center 0
+	background-repeat   no-repeat
+	height              592px
+	overflow            hidden
+	.content
+		padding 38px 0
+		.title
+			color       COLOR_LAPIS_LAZULI
+			emSize      1.48
+			margin-left -2px
+			track       -.021
+		#calculatorOuterShell
+			.backToTop
+				margin     -6px 1px 7px 0
+				text-align right
+				.link
+					border-bottom 1px solid COLOR_LAPIS_LAZULI
+					color           COLOR_LAPIS_LAZULI
+					emSize          .66
+					margin-right    5px
+					track           -.02
+			#calculatorInnerShell
+				background url(IMG_DIR + '/bg_calculator.png') repeat 0 0
+				padding    27px 25px
+				position   relative
+				.help
+					emSize .77
+					track  .009
+				#sliders
+					border-bottom  1px solid COLOR_LIGHT_GREY
+					margin-bottom  12px
+					padding-bottom 27px
+					.sliderWrapper
+						display     table
+						height      44px
+						margin-top  16px
+						position    relative
+						user-select none
+						width       100%
+						label
+							color          COLOR_BLUE_GREEN
+							display        table-cell
+							emSize         .85
+							lead           1.25
+							padding-right  64px
+							position       relative
+							text-align     right
+							text-transform uppercase
+							track          -.05
+							vertical-align middle
+							width          184px
+							.subLabel
+								display        block
+								emSize         .9
+								right          64px
+								position       absolute
+								text-transform none
+								track          -.06
+								
+						.slider
+							display      inline-block
+							position     absolute
+							margin-right 63px
+							margin-top   -2px
+							top          50%
+							width        250px
+							z-index      20
+							&.ui-slider-horizontal
+								.ui-slider-handle
+									top -18px
+							.slider_track
+								left     -53px
+								position relative
+						.ui-slider-handle
+							cursor      pointer
+							margin-left -53px
+							position    absolute
+							z-index     2
+						.wrapper_slider
+							left     325px
+							position relative
+							top      10px
+							.sliderValue
+							.postfix .period
+								emSize .9
+								track  -.015
+				.footnotes
+					emSize .6
+					margin-left 2px
+					track       .002
+					a
+						color COLOR_LAPIS_LAZULI
+			#totalOuterShell
+				padding 8px 27px 11px
+				position relative
+				.cta_small_grey
+					margin-top -14px
+					position   absolute
+					top        50%
+				#totalInnerShell
+					float right
+					.label
+						color          COLOR_WHITE
+						emSize         .9
+						margin-right   10px
+						text-transform uppercase
+						track          -.04
+					.bg_annual_reward
+						display     inline-block
+						text-align  center
+						#total
+							color       COLOR_OIL
+							emSize      1.6
+							position    relative
+							top         3px
+							user-select none
+							z-index     999
+
+#fillagree
+	background url(IMG_DIR + '/bg_fillagree.png') repeat-x 0 0
+	border-top 7px solid COLOR_VIKING
+	height 55px
+
+#stickyShell
+	bottom   -75px
+	position fixed
+	width    100%
+	z-index  9999
+	.bg_sticky_shadow
+		background-repeat repeat-x
+		display           block
+		width             100%
+	.bar
+		padding    9px 0
+		position   relative
+		text-align right
+		span.stickyText
+			color    COLOR_WHITE
+			emSize   .85
+			position relative
+			right    142px
+			track    -.013
+			.learnMore
+				color           COLOR_WHITE
+				text-decoration underline
+		span.cc_small_amex
+			display  inline-block
+			position absolute
+			right    -12px
+			top      -35px
+
+.shadowTable
+	height 100%
+	width  @height
+
+.panelShadowGroupA
+.panelShadowGroupB
+	height 100%
+
+.panelShadowGroupC
+	width 100%
+
+.panel_shadow_section_b
+.panel_shadow_section_j
+	background-repeat repeat-y
+	height            100%
+
+.panel_shadow_section_f
+	background-repeat repeat-x
+	width             auto

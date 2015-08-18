@@ -1,0 +1,426 @@
+// MIXINS
+emSize(n)
+	font-size s('%sem',n)
+
+// RULES
+h1,h2,h3,h4,h5,h6,p
+	transition font-size TRANSITION_DURATION TRANSITION_EASE
+
+sup,sub
+	position       relative
+	vertical-align baseline
+
+sup
+	top -.4em
+
+sub
+	top .4em
+
+.textCaps
+	text-transform uppercase
+
+.textUnderline
+	text-decoration underline
+
+.textCentered
+	text-align center
+
+.textRight
+	text-align right
+
+.textBold
+	font-weight bold
+
+.textOblique
+	font-style oblique
+
+.textArial
+	font-family Arial
+
+.textTimes
+	font-family Times
+
+.textBentonSans
+	font-family 'BentonSans'
+
+.textBentonSansBd
+	font-family 'BentonSans-Bd'
+
+.textBentonSansBk
+	font-family 'BentonSans-Bk'
+
+.textBentonSansLt
+	font-family 'BentonSans-Lt'
+
+.textBentonSansMd
+	font-family 'BentonSans-Md'
+
+body
+	@extend .textBentonSans
+	line-height 1.4
+
+p a.phoneLink
+	color           inherit
+	text-decoration none
+	cursor          text
+	@media TABLET_MAX_WIDTH
+		color           blue
+		text-decoration underline
+
+.textNavy
+	color: COLOR_NAVY
+
+.textGrey1
+	color: COLOR_GREY_1
+
+.textGrey2
+	color: COLOR_GREY_2
+
+.textGrey3
+	color: COLOR_GREY_3
+
+.textGrey4
+	color: COLOR_GREY_4
+
+.textGrey5
+	color: COLOR_GREY_5
+
+.textGrey6
+	color: COLOR_GREY_6
+
+.textGrey7
+	color: COLOR_GREY_7
+
+.textWhite
+	color: COLOR_WHITE
+.text-5Em
+	emSize .5
+
+.text-6Em
+	emSize .6
+
+.text-7Em
+	emSize .7
+
+.text-8Em
+	emSize .8
+
+.text-9Em
+	emSize .9
+
+.text1Em
+	emSize 1
+
+.text1-1Em
+	emSize 1.1
+
+.text1-2Em
+	emSize 1.2
+
+.text1-3Em
+	emSize 1.3
+
+.text1-4Em
+	emSize 1.4
+
+.text1-5Em
+	emSize 1.5
+
+.text1-6Em
+	emSize 1.6
+
+.text1-7Em
+	emSize 1.7
+
+.text1-8Em
+	emSize 1.8
+
+.text1-9Em
+	emSize 1.9
+
+.text2Em
+	emSize 2
+
+.text2-1Em
+	emSize 2.1
+
+.text2-2Em
+	emSize 2.2
+
+.text2-3Em
+	emSize 2.3
+
+.text2-4Em
+	emSize 2.4
+
+.text2-5Em
+	emSize 2.5
+
+.text2-6Em
+	emSize 2.6
+
+.text2-7Em
+	emSize 2.7
+
+.text2-8Em
+	emSize 2.8
+
+.text2-9Em
+	emSize 2.9
+
+.text3Em
+	emSize 3
+
+.textHeroSm
+	@extend .textWhite
+	@extend .textTimes
+	@extend .textOblique
+	@extend .text1-5Em
+	@extend .textCaps
+	letter-spacing .095em
+	&.alignWithTextHeroLg
+		margin-left 15px
+	@media TABLET_MAX_WIDTH
+		font-size 1.1em
+	@media MOBILE_MAX_WIDTH
+		font-size      .8em
+		letter-spacing .08em
+		margin-left    44px
+
+.textHeroLg
+	@extend .textWhite
+	@extend .textBentonSans
+	@extend .textOblique
+	@extend .text2-7Em
+	@extend .textCaps
+	letter-spacing .022em
+	line-height    1
+	@media TABLET_MAX_WIDTH
+		font-size 2em
+	@media MOBILE_MAX_WIDTH
+		@extend .textBentonSansMd
+		font-size      1.4em
+		letter-spacing .01em
+		margin-left    44px
+
+.overviewHead1
+	@extend .textBentonSansMd
+	color       COLOR_NAVY
+	font-size   .95em
+	line-height 1.7
+
+.overviewHead2
+	@extend .textBentonSans
+	@extend .text1-8Em
+	color          COLOR_NAVY
+	letter-spacing .01em
+	line-height    1.2
+
+.overviewHead3
+	@extend .textBentonSansMd
+	color          COLOR_NAVY
+	font-size      .95em
+	letter-spacing .005em
+
+.overviewGraph1
+	@extend .textBentonSans
+	@extend .text-8Em
+	color          COLOR_GREY_1
+	letter-spacing .031em
+	line-height    1.6
+	margin         14px 0
+	width          380px
+	@media TABLET_MAX_WIDTH
+		width 56%
+	@media TABLET_MAX_WIDTH_2
+		width auto
+	sup
+		@extend .text-5Em
+		position relative
+		top      -.4em
+
+.overviewGraph2
+	@extend .textBentonSans
+	color       COLOR_GREY_1
+	font-size   .72em
+	line-height 1.42
+	margin-top  16px
+	width       354px
+	@media TABLET_MAX_WIDTH_2
+		width auto
+
+.overviewGraph3
+	@extend .textBentonSansBd
+	color         COLOR_GREY_2
+	border-top    1px solid COLOR_GREY_7
+	border-bottom @border-top
+	text-align    center
+	font-size     .72em
+	padding 8px 0
+	margin-top 26px
+
+.textSectionHeadline
+	@extend .textBentonSans
+	@extend .text1-5Em
+	color          COLOR_NAVY
+	letter-spacing -.005em
+	margin-bottom  37px
+	@media TABLET_MAX_WIDTH
+		display none
+
+.textSectionSubhead
+	@extend .textBentonSansMd
+	@extend .text-9Em
+	color          COLOR_NAVY
+	letter-spacing .026em
+	margin-bottom  11px
+	line-height    1.6
+	sup
+		@extend .text-5Em
+		top -.8em
+	.subscript
+		position relative
+		top      6px
+
+.textSectionListHead
+	@extend .textBentonSansMd
+	@extend .textCaps
+	color         COLOR_GREY_1
+	font-size     .72em
+	margin-bottom 21px
+	margin-top    23px
+
+.textSectionGraph
+	color          COLOR_GREY_1
+	font-size      .72em
+	letter-spacing -.008em
+	line-height    1.5
+	width          500px
+	&.marginBottom35px
+		margin-bottom 35px
+	strong,b
+		@extend .textBentonSansBd
+		font-weight    normal
+		letter-spacing .014em
+	sup
+		@extend .text-5Em
+		top -.6em
+	@media TABLET_MAX_WIDTH
+		width auto
+		br
+			display none
+
+ul.points
+	margin 6px 0 18px
+	li
+		border-bottom  1px solid COLOR_GREY_4
+		padding        11px 0
+		clearfix();
+		span.pointMultiplier
+			@extend .textBentonSans
+			@extend .text1-9Em
+			color    COLOR_GOLD
+			display  inline-block
+			width    38px
+		&.multiLine
+			padding-bottom 25px
+			p
+				line-height    1.3em
+				top            8px
+				vertical-align top
+				@media TABLET_MAX_WIDTH
+					width 82%
+		p
+			@extend .textCaps
+			color          COLOR_GREY_1
+			display        inline-block
+			font-size      .72em
+			letter-spacing -.006em
+			margin-left    6px
+			position       relative
+			top            -6px
+			width          448px
+			@media TABLET_MAX_WIDTH
+				width auto
+			@media MOBILE_MAX_WIDTH
+				width 232px
+				&.mobileTopAdjust
+					top 1px
+
+.textPointsFinePrint
+	color          COLOR_GREY_1
+	font-size      .65em
+	letter-spacing .033em
+	line-height    1.5
+	width          440px
+	@media TABLET_MAX_WIDTH
+		width auto
+
+ul.receiptMatch li
+	@media TABLET_MAX_WIDTH
+		br
+			display none
+
+
+.contentContainer1000.legal
+	@media LEGAL_MAX_WIDTH
+		padding 34px 5% 29px
+	p
+		@extend .textGrey1
+		@extend .textArial
+		font-size     .75em
+		line-height   1.2
+		margin-bottom 12px
+		a
+			@extend .textUnderline
+			color COLOR_TEAL
+		strong,b
+			font-weight bold
+		sup
+			margin-right 2px
+
+div.sideNav
+	left       0
+	position   absolute
+	top        866px
+	&.fixed
+		position fixed
+		left     0
+		top      28px
+	&.lowerBound
+		top 2487px
+	li
+		@extend .textCaps
+		@extend .text-9Em
+		background-color  COLOR_WHITE
+		border            1px solid COLOR_GREY_3
+		border-left-width 0
+		clear             both
+		display           block
+		float             left
+		height            38px
+		letter-spacing    -.009em
+		overflow          hidden
+		width             198px
+		&.first
+			border-radius 0 4px 0 0
+		&.last
+			border-radius    0 0 4px 0
+			border-top-width 0
+		&.active
+			background-color    transparent
+			background-image    url('../img/icons.png')
+			background-position -4px -4px
+			background-repeat   no-repeat
+			border              none
+			width               208px
+			a
+				color         COLOR_WHITE
+		a
+			color           COLOR_GREY_1
+			display         inline-block
+			padding         10px 0 10px 25px
+			text-decoration none
+			width           100%
+	@media TABLET_MAX_WIDTH
+		display none

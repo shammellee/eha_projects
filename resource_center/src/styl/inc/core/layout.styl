@@ -1,0 +1,44 @@
+.clearfix
+	clearfix()
+
+#shell
+	margin   auto
+	position relative
+	width    LAYOUT_WIDTH
+
+#nav
+	background-repeat repeat-x
+	height            NAV_BAR_HEIGHT
+	padding-left      20px
+	padding-right     @padding-left
+	position          absolute
+	width             LAYOUT_WIDTH - (@padding-left + @padding-right)
+	.navLabel
+		@extend .textBold
+		@extend .textGrey
+		display        inline-block
+		emSize         .7
+		letter-spacing .015em
+		padding-top    15px
+		text-transform uppercase
+	.nav_shadow_west,.nav_shadow_east
+		background-repeat repeat-y
+		height            auto
+	.nav_shadow_west
+		background-position -9px 0
+	.nav_shadow_east
+		background-position -11px 0
+	.nav_shadow_southwest
+		background-position -29px -17px
+	.nav_shadow_south
+		background-position 0 -50px
+		background-repeat repeat-x
+		width             auto
+	.nav_shadow_southeast
+		background-position -34px -17px
+
+#hero
+	background-position 0 0
+	background-repeat   no-repeat
+	height              358px
+	width               LAYOUT_WIDTH

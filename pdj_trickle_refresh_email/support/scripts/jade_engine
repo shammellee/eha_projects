@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+COLOR_ERROR="\033[31m"
+COLOR_NORMAL="\033[0m"
+
+[ $# -lt 3 ] && { echo -e "${COLOR_ERROR}Usage:${COLOR_NORMAL} ${0##*/} <template.jade> <config.json> <outputDir>"; exit 1; }
+[ -f "$1" ] || { echo -e "${COLOR_ERROR}Invalid jade file:${COLOR_NORMAL} $1"; exit 1; }
+[ -f "$2" ] || { echo -e "${COLOR_ERROR}Invalid config file:${COLOR_NORMAL} $2"; exit 1; }
+[[ -n "$3" && ! -d "$3" ]] && { echo -e "${COLOR_ERROR}Invalid output directory:${COLOR_NORMAL} $3"; exit 1; }
+which jade > /dev/null || { echo -e "${COLOR_ERROR}Error:${COLOR_NORMAL} Could not find Jade installation" >&2; exit 1; }
+
+_JADE_FLAGS=${4:-'--pretty'}
+_outDir=${3:-"."}
+_inFile="$2"
+_outFile="${2##*/}"
+_outFile="${_outFile// /_}"
+_outName="${_outFile%.json}"
+_outFile="${_outName}.html"
+_fileContents=$(cat "$_inFile")
+
+mkdir -p "${_outDir}/${_outName}"
+jade $_JADE_FLAGS -O "$_fileContents" < $1 > "${_outDir}/${_outName}/${_outFile}"

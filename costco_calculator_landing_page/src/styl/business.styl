@@ -1,0 +1,83 @@
+@require 'inc/shared'
+@require 'inc/sprites/business.css'
+
+#section1
+	#mainTextShell
+		#mainText
+			#main
+				.title
+					emSize        2.25
+					lead          1.15
+					margin-bottom 1px
+					track         -.024
+			#alt
+				.title
+					emSize     .95
+					margin-top 2px
+				.body
+					emSize        .65
+					lead          1.6
+					margin-bottom 15px
+					track         .01
+
+#section2
+	background-color COLOR_GHOST_GREY
+	color            COLOR_TROUT
+	.content
+		padding-bottom 5px
+		&>.title
+			color COLOR_LAPIS_LAZULI
+		#benefits1
+		#benefits2
+			float  left
+			height 153px
+			.title
+				emSize        .9
+				margin-bottom 13px
+			#benefits
+				margin-left 7px
+				.benefit
+					margin-bottom 8px
+					position relative
+					.bullet
+						emSize   .8
+						left     -8px
+						position absolute
+						top      -1px
+					.text
+						emSize   .8
+						lead     1.25
+						position relative
+						track    -.003
+		#benefits1
+			border-right  1px solid COLOR_FRENCH_GREY
+			padding-right 12px
+			width         370px
+			.title
+				track .01
+		#benefits2
+			margin-left 15px
+			width       400px
+			.title
+				track -.006
+
+#section3
+	.content
+		#calculatorOuterShell
+			#calculatorInnerShell
+				#sliders
+					.sliderWrapper
+						label
+							color  COLOR_LAPIS_LAZULI
+						.wrapper_slider
+							.sliderValue
+								color COLOR_LAPIS_LAZULI
+							.postfix
+								.period
+									color COLOR_LAPIS_LAZULI
+			#totalOuterShell
+				background-color COLOR_SAPPHIRE
+
+#stickyShell
+	.bar
+		background-color COLOR_BLUE_GREEN

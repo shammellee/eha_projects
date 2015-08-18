@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+MODE_ERROR="\033[31m"
+MODE_NORMAL="\033[0m"
+
+[ $# -lt 4 ] && { echo -e "${MODE_ERROR}Usage:${MODE_NORMAL} ${0##*/} <targetName> <targetImageDirName> <sourceDir> <destinationDir>";exit 1; }
+[ -d "$3" ] || { echo -e "${MODE_ERROR}Invalid source directory:${MODE_NORMAL} '${3}'";exit 1; }
+
+_copy_cmd="cp -f"
+_sed_cmd="sed -En"
+_outDir="${4}/${1// /_}/${2}"
+_sharedDirs=( "${3}/shared" "${3}/common" )
+_imgTypes="(png|jpg|gif)"
+
+[ -d "$_outDir" ] || mkdir -p "$_outDir"
+
+rm -rf "$_outDir"/*
+
+_imgs=()
+
+for _d in "$_sharedDirs"
+do
+	if [ -d "$_d" ]
+	then
+		for i in $(ls "$_d"/* | $_sed_cmd "/${_imgTypes}/p")
+		do
+			[ -f "$i" ] && _imgs+=( "$i" )
+		done
+	fi
+done
+
+for i in "${3}/${1}"/*
+do
+	_f=$(echo "$i" | ${_sed_cmd} "/$_imgTypes/p")
+	[ -f "$_f" ] && _imgs+=( "$_f" )
+done
+
+[ -d "${3}/${1}" ] && { $_copy_cmd "${_imgs[@]}" "$_outDir"; } || { echo -e "${MODE_ERROR}Invalid directory:${MODE_NORMAL} '${3}/${1}'";exit 1; }
+
+for f in "$_outDir"/*
+do
+	mv "$f" "${f// /_}"
+done

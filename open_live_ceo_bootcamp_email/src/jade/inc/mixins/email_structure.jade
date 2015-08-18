@@ -1,0 +1,43 @@
+mixin table
+	table(border="0",cellpadding="0",cellspacing="0")&attributes(attributes)
+		if block
+			block
+
+mixin table_vSpace(padding,count)
+	- var styles = attributes.style
+	- delete attributes.style
+	- count = count || 1
+	+table(width='100%'): tr: +td_vSpace(padding,count)&attributes(attributes)
+
+mixin table_hSpace(padding,count)
+	- var styles = attributes.style
+	- delete attributes.style
+	- count = count || 1
+	+table(width='100%'): tr: +td_hSpace(padding,count)&attributes(attributes)
+
+mixin td_hSpace(padding,count)
+	- var attrs = {}
+	each val,key in attributes
+		- attrs[key] = val
+
+	- var styles = attrs.style ? ';' + attrs.style : ''
+	- delete attrs.style
+	- count = count || 1
+
+	while count > 0
+		td&attributes(attrs)(style='font-size:0;line-height:0;padding-left:#{padding}px#{styles}') &nbsp;
+		- count--
+
+mixin td_vSpace(padding,count)
+	- var attrs = {}
+	each val,key in attributes
+		- attrs[key] = val
+
+	- var styles = attrs.style ? ';' + attrs.style : ''
+	- delete attrs.style
+	- count = count || 1
+
+	while count > 0
+		td&attributes(attrs)(style='font-size:0;line-height:0;padding-top:#{padding}px#{styles}') &nbsp;
+		- count--
+

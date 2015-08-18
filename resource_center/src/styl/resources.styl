@@ -1,0 +1,112 @@
+@require 'inc/core/mixins'
+@require 'inc/core/colors'
+@require 'inc/core/text'
+@require 'inc/sprites/resources.css'
+
+[class*=icon_hero_]
+[class*=icon_sort_]
+[class*=resource_icon_]
+	display inline-block
+
+#resourceNav
+	@extend .textWhite
+	background-color COLOR_BYZANTIUM
+	height           124px
+	left             40px
+	overflow         hidden
+	padding          29px 0 31px
+	position         absolute
+	top              109px
+	width            460px
+	&>a
+		display    block
+		height     100%
+		position   absolute
+		text-align center
+		transition background-color TRANSITION_DURATION
+		width      70px
+		top        0
+		&.prev
+			left 0
+		&.next
+			right 0
+		&:hover
+			background-color saturate(darken(COLOR_BYZANTIUM,30%),45%)
+		[class^=icon_hero_]
+			margin-top -16px
+			position   relative
+			top        50%
+	#text
+		float       left
+		left        50%
+		margin-left -153px
+		position    relative
+		width       306px
+		.title
+			@extend .textBentonSansMd
+			emSize         1.15
+			margin-bottom  11px
+		.body
+			@extend .textBentonSansBk
+			emSize         .85
+			letter-spacing .001em
+			line-height    1.6
+
+#resourceSort
+	@extend .textRight
+	margin-bottom 38px
+	margin-top 25px
+	width      INTERNAL_LIST_WIDTH - 38px
+	.sortLabel
+		@extend .textGrey
+		emSize   .75
+		position relative
+		top      -2px
+	#sortItems
+		float right
+		li
+			cursor      pointer
+			float       left
+			margin-left 6px
+#sortByDate
+	display none
+
+.resource
+	margin-bottom 38px
+	position      relative
+	.resourceIcon
+		position absolute
+		left     -14px
+	.resourceUpperInfo
+	.resourceLowerInfo
+		margin-left 19px
+		width 509px
+	.resourceUpperInfo
+		margin-bottom 5px
+		.resourceTitle
+			emSize .75
+			float  left
+			a
+				text-decoration underline
+		.resourceAction
+			float right
+			.resourceActionLabel
+				@extend .textByzantium
+				@extend .textUnderline
+				emSize   .75
+				position relative
+				top      -3px
+			.resourceActionIcon
+				margin-left    9px
+				vertical-align top
+	.resourceLowerInfo
+		.resourceBody
+			float left
+			width 384px
+		.resourceMeta
+			@extend .textGrey
+			emSize         .75
+			float          right
+			text-transform uppercase
+			span
+				margin-left 17px

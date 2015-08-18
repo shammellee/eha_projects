@@ -1,0 +1,252 @@
+@require 'inc/core/config'
+@require 'inc/core/mixins'
+@require 'inc/core/colors'
+@require 'inc/core/text'
+@require 'inc/core/buttons'
+@require 'inc/sprites/shared_internal.css'
+
+#navItems
+	float    right
+	position relative
+	li
+	li a
+		@extend .textNavy
+		
+	&>li
+		emSize .8
+		float left
+		&>a
+			@extend .textBentonSansMd
+			@extend .textBold
+			@extend .textNavy
+			border-color   darken(COLOR_NAV_HOVER_BORDER_GREY,15%)
+			border-style   solid
+			border-width   0 1px 0 0
+			display        inline-block
+			letter-spacing -.035em
+			padding        13px 12px 9px
+		&.nestedNav
+			@extend .textRight
+			position relative
+			&>a
+				border-bottom-color COLOR_NAV_HOVER_BORDER_GREY
+				border-width        0 1px 1px 1px
+				.icon_nav_open
+				.icon_nav_close
+					margin-left    8px
+					vertical-align middle
+			.navDropDownShell
+				display  none
+				position relative
+				right    -4px
+				top      0px
+				z-index  10000
+				.navDropDownList
+					background-color COLOR_NAV_BG_GREY
+					padding          10px 0
+				.navDropDownItem
+					a
+						display block
+						emSize  .93
+						padding 5px 10px
+					&:hover
+						@extend .textWhite
+						background-color COLOR_NAV_HOVER_GREY
+					&:hover a
+						@extend .textWhite
+				.navDropDownItem
+				.navDropDownItem a
+					@extend .textRight
+			&:hover
+				&>a
+					background-color COLOR_NAV_BG_GREY
+					border-bottom-color COLOR_NAV_HOVER_BORDER_GREY
+					.icon_nav_open
+						background-position-x -290px
+				.navDropDownShell
+					display block
+
+#contentShell
+	padding  0 80px 44px 94px
+	position relative
+
+.headingNavy
+	@extend .textNavy
+	emSize         1.3
+	letter-spacing .009em
+	line-height    1.3
+
+.icon_modal_close
+	cursor   pointer
+	position absolute
+	right    14px
+	top      11px
+
+.categoryTitle
+.categoryTitle a
+.resourceTitle
+.resourceTitle a
+	@extend .textByzantium
+	@extend .textBold
+
+.listItemBody
+	@extend .textGrey
+	emSize .75
+	line-height 1.2
+
+.listShell
+	float left
+	width INTERNAL_LIST_WIDTH
+
+#modules
+	@extend .textGrey
+	emSize      .75
+	float       right
+	margin-top  62px
+	width       281px
+	.module
+		padding 15px 28px 21px 21px
+		.moduleTitle
+			@extend .headingNavy
+			margin-bottom  14px
+		&.contentPlaybookModule
+			padding-bottom 17px
+			padding-top    19px
+			position       relative
+			.content_playbook_inner_shadow
+				background-repeat repeat-x
+				left              0
+				position          absolute
+				top               0
+				width             100%
+		.moduleBody
+			line-height 1.2
+			p
+				margin-bottom 15px
+			a
+				@extend .textByzantium
+		&.contentPlaybookModule p
+			margin-bottom 11px
+		&.salesTipOfTheMonthModule
+			.profilePhoto
+				display inline-block
+				float   left
+				height  50px
+				width   @height
+			.profileInfo
+				float left
+				margin-left 15px
+				margin-top  9px
+				width 167px
+				span
+					display block
+		&.knowledgeCenterModule .moduleBody a
+		&.contentPlaybookModule a
+			&:before
+				background-image    url(IMG_DIR + '/shared_internal.png')
+				background-position -280px -10px
+				background-repeat   no-repeat
+				content             ""
+				display             inline-block
+				height              7px
+				left                0
+				position            absolute
+				top                 3px
+				width               9px
+			@extend .textByzantium
+			display      inline-block
+			emSize       1
+			padding-left 16px
+			position     relative
+		&.amex360Module .moduleBody a
+			@extend .textUnderline
+	.module_shadow
+		margin-bottom 18px
+
+.bgLightGrey
+	background-color COLOR_MODULE_LIGHT_GREY
+
+.bgMediumGrey
+	background-color COLOR_MODULE_MEDIUM_GREY
+
+#footnotes
+	@extend .text-5Em
+	@extend .textGrey
+	border-top  1px solid COLOR_FOOTNOTES_BORDER_GREY
+	clear       both
+	padding-top 15px
+	width       520px
+
+#aux
+	emSize .75
+	.overlay
+		background url(IMG_DIR + '/bg_overlay.png') repeat 0 0
+		cursor default
+		display none
+		left 0
+		min-height 100%
+		position fixed
+		top 0
+		width 100%
+		z-index 9999
+
+	#agreementShell
+	#youtubeVideoPlayerShell
+		display  none
+		left     50%
+		position fixed
+		top      50%
+		z-index  10000
+	#agreementShell
+		height      AGREEMENT_HEIGHT
+		margin-left -(AGREEMENT_WIDTH / 2)
+		margin-top  -(AGREEMENT_HEIGHT / 2)
+		width       AGREEMENT_WIDTH
+		#agreement
+			background  COLOR_PANEL_BACKGROUND
+			padding     30px
+			height AGREEMENT_HEIGHT - (@padding * 2 + 9)
+			width AGREEMENT_WIDTH - (@padding * 2 + 8)
+			.agreementTitle
+				@extend .headingNavy
+				line-height   1.2
+				margin-bottom 16px
+				margin-top    -6px
+			.agreementBody
+				@extend .textGrey
+				border     1px solid COLOR_ICON_GREY
+				emSize     .7
+				height     158px
+				margin     0 auto 20px
+				overflow-y scroll
+				padding    20px
+				width      478px
+				h2
+				p
+					margin-bottom 10px
+				h2
+					@extend .textArialBold
+				li
+					@extend .textBold
+					list-style-position inside
+					list-style-type     decimal
+					p
+						font-weight normal
+						line-height 1.3
+						&.indent
+							text-indent 35px
+	#youtubeVideoPlayerShell
+		height      VIDEO_PLAYER_HEIGHT + 9
+		margin-left -((VIDEO_PLAYER_WIDTH + 8) / 2)
+		margin-top  -((VIDEO_PLAYER_HEIGHT + 9) / 2)
+		width       VIDEO_PLAYER_WIDTH + 8
+		.closeVideo
+			@extend .textWhite
+			cursor   pointer
+			display  inline-block
+			emSize   1.2
+			position absolute
+			right    5px
+			top      -30px
+		#youtubeVideoPlayer
+			display block

@@ -1,0 +1,16 @@
+//- ==============
+//- = NAVIGATION =
+//- ==============
+ul#navItems
+	li.nestedNav
+		a(href!=DATA.nav.topLevelItem.url)
+			span.linkLabel!= DATA.nav.topLevelItem.label
+			span.icon_nav_open
+		.navDropDownShell
+			+panelWithShadow(class='navDropDownShadowTable')
+				ul.navDropDownList
+
+					each n,i in DATA.nav.dropdown
+						li.navDropDownItem: a(href!=n.url)!= n.label
+
+	li.externalLink: a(href!=DATA.nav.knowledgeCenter.url)!= DATA.nav.knowledgeCenter.label

@@ -1,0 +1,14 @@
+extends inc/templates/base
+
+prepend config
+	- var pageVersion = 'personal'
+
+block section2
+	+container#section2
+		+content
+			h3.title.textBentonSans!= _config.text.section2Title
+			ul#benefits.clearfix
+				- var bLen = DATA.cardBenefits.length
+				each b,i in DATA.cardBenefits
+					li.benefit.textArial(class=(i == 0 ? 'first' : 'separator'))!= b
+		.section_shadow

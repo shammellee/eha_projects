@@ -1,0 +1,26 @@
+extends inc/templates/base
+
+block title
+	title #{PROJECT_NAME} &rsaquo; Login
+
+append css
+	+loadCss(_config.css.path + '/login.css')
+
+block content
+	#background
+	#loginPanelShell
+		+panelWithShadow(id='loginPanel')
+			h1.loginTitle Welcome to the American Express Resource Center
+			p.loginBody
+				| On this site, you can access valuable information and resources designed to help you acquire and engage merchants, and promote the value of American Express
+				sup &reg;!{BLANK}
+				| Card acceptance to your customers. Enter your passcode below to access the site and get started.
+			form(action='/1156.aspx',method='POST')
+				label(for='PasswordTextbox')
+					span.passcodeLabel Passcode
+						span.errorMessage The passcode you entered in invalid.
+					input#PasswordTextbox(type='password')
+				button#LoginButton.submit(type='submit') Enter Site
+			p.finePrint.textOblique Don't know your passcode? Please contact your American Express representative for assistance
+			.finePrintSeparator
+			p.finePrint You understand and agree that use of the American Express Resource Center and any content that may be obtained there from is at your sole risk. The American Express Resource Center and all content is provided "as is" without any warranty of any kind, either express or implied.

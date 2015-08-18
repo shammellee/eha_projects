@@ -1,0 +1,35 @@
+@require 'nib'
+global-reset()
+
+@require 'inc/core'
+@require 'inc/sprites/shared.css'
+@require 'inc/sprites/pattern_single_pixel_horizontal.css'
+@require 'inc/sprites/pattern_single_pixel_vertical.css'
+
+div#iNavNGI_Header .iNavShadow
+	margin   auto
+	position absolute
+	width    100%
+
+[class^=icon_]
+	display inline-block
+
+.shadowTable
+	height 100%
+	width  @height
+
+.panelShadowGroupA
+.panelShadowGroupB
+	height 100%
+
+.panelShadowGroupC
+	width 100%
+
+.panel_shadow_section_b
+.panel_shadow_section_j
+	background-repeat repeat-y
+	height            100%
+
+.panel_shadow_section_f
+	background-repeat repeat-x
+	width             auto

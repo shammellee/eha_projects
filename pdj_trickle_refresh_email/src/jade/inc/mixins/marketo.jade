@@ -1,0 +1,5 @@
+mixin mkt(lineHeight)
+	.mktEditable&attributes(attributes)
+		span(style='line-height:' + (lineHeight || '100%') + ';')
+			if block
+				block

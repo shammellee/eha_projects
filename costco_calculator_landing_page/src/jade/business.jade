@@ -1,0 +1,25 @@
+extends inc/templates/base
+
+prepend config
+	- var pageVersion = 'business'
+
+block section2
+	+container#section2
+		+content
+			h3.title.textBentonSans!= _config.text.section2Title
+			#benefitsShell.clearfix
+				#benefits1
+					h4.title.textArialBold!= DATA.section2Side1.benefitsTitle
+					ul#benefits.clearfix
+						each b,i in DATA.section2Side1.cardBenefits
+							li.benefit
+								span.bullet!= BULLET
+								p.text.textArial!= b
+				#benefits2
+					h4.title.textArialBold!= DATA.section2Side2.benefitsTitle
+					ul#benefits.clearfix
+						each b,i in DATA.section2Side2.cardBenefits
+							li.benefit
+								span.bullet!= BULLET
+								p.text.textArial!= b
+		.section_shadow

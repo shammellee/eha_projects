@@ -1,0 +1,34 @@
+@require 'mixins'
+@require 'colors'
+@require 'text'
+
+[class^=cta_]
+	cursor     pointer
+	text-align center
+	span
+		position relative
+
+.cta_small_blue
+.cta_large_blue
+	span
+		color COLOR_WHITE
+
+[class*=cta_small_]
+	span
+		emSize .8
+		top    2px
+		track  .04
+
+[class*=cta_large_]
+	span
+		emSize .95
+		top    6px
+		track  .035
+
+a:focus
+	outline 5px auto COLOR_OUTLINE
+
+.cta_small_grey
+	span
+		color COLOR_COOL_BLACK
+

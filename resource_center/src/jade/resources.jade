@@ -1,0 +1,53 @@
+extends inc/templates/internal
+
+block title
+	title #{PROJECT_NAME} &rsaquo; Resources
+
+append css
+	+loadCss(_config.css.path + '/resources.css')
+
+block hero
+	#hero(style='background:url(#{_config.images.path}/#{DATA.resources.hero}) no-repeat 0 0')
+	#resourceNav.clearfix
+		a.prev(href!=DATA.resources.nav.links.prev)
+			span.icon_hero_left_arrow
+		#text
+			h1.title!= DATA.resources.nav.title
+			p.body!= DATA.resources.nav.body
+		a.next(href!=DATA.resources.nav.links.next)
+			span.icon_hero_right_arrow
+	.hero_shadow
+
+block list
+	#resourceListShell.listShell
+		// RESOURCE SORT BAR
+		#resourceSort
+			span.sortLabel Sort by:
+			ul#sortItems
+				li.icon_sort_favorite.icon_sort_favorite_active
+				li.icon_sort_date.icon_sort_date_inactive
+
+		// RESOURCE LIST
+		ul#resourceList
+
+			each r,i in DATA.resources.items
+				li.resource(class!=r.type)
+					span.resourceIcon(class='resource_icon_#{r.type}')!= BLANK
+					.resourceUpperInfo.clearfix
+						h2.resourceTitle
+							a(href!=r.url)!= r.title
+						span.resourceAction
+							a.resourceActionLabel(href!=r.url)!= r.actionLabel
+							span.resourceActionIcon(class='resource_icon_#{r.actionLabel.replace(/\s/g,"_").toLowerCase()}')
+					.resourceLowerInfo.clearfix
+						p.listItemBody.resourceBody!= r.body
+						span.resourceMeta
+							span.resourceSize!= r.size
+							span.resourceAddedDate!= r.dateAdded
+	
+block footnotes
+	if DATA.resources.footnotes
+		// =============
+		// = FOOTNOTES =
+		// =============
+		#footnotes!= DATA.resources.footnotes
